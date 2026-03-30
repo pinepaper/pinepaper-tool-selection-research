@@ -1,0 +1,18 @@
+\begin{table}[t]
+\centering
+\caption{Tool selection baseline comparison (aggregate).}
+\label{tab:baselines-aggregate}
+\begin{tabular}{lrrrrrr}
+\toprule
+Method & R@1 & R@3 & R@5 & NDCG@5 & MRR & Time (ms) \\
+\midrule
+Random & 0.025 & 0.099 & 0.154 & 0.095 & 0.124 & \textbf{6.9} \\
+Keyword Match & 0.532 & 0.763 & 0.842 & 0.731 & 0.771 & 104.4 \\
+BM25 & 0.582 & 0.809 & 0.892 & 0.791 & 0.814 & 11.3 \\
+TF-IDF + Cosine & 0.511 & 0.782 & 0.876 & 0.751 & 0.764 & 20.9 \\
+KG-Text-Only & 0.532 & 0.763 & 0.842 & 0.731 & 0.771 & 98.4 \\
+KG-ToolRank & 0.394 & 0.639 & 0.706 & 0.591 & 0.619 & 344.8 \\
+KG-Hybrid & \textbf{0.591} & \textbf{0.842} & \textbf{0.897} & \textbf{0.800} & \textbf{0.824} & 163.4 \\
+\bottomrule
+\end{tabular}
+\end{table}

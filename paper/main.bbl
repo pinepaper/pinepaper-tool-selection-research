@@ -1,0 +1,140 @@
+\begin{thebibliography}{22}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[{Anthropic}(2024)]{mcp2024}
+{Anthropic}.
+\newblock Model context protocol.
+\newblock 2024.
+\newblock URL \url{https://modelcontextprotocol.io}.
+
+\bibitem[Chen et~al.(2024)Chen, Li, et~al.]{chen2024agentgraph}
+Yuxiang Chen, Zixiang Li, et~al.
+\newblock Agent-as-a-graph: Towards universal agent architecture via graph
+  neural networks.
+\newblock \emph{arXiv preprint}, 2024.
+
+\bibitem[Cohen(1988)]{cohen1988effect}
+Jacob Cohen.
+\newblock Statistical power analysis for the behavioral sciences.
+\newblock 1988.
+
+\bibitem[Efron and Tibshirani(1993)]{efron1993bootstrap}
+Bradley Efron and Robert~J Tibshirani.
+\newblock An introduction to the bootstrap.
+\newblock 1993.
+
+\bibitem[Hao et~al.(2024)Hao, Liu, Wang, and Hu]{hao2024toolkengpt}
+Shibo Hao, Tianyang Liu, Zhen Wang, and Zhiting Hu.
+\newblock {ToolkenGPT}: Augmenting frozen language models with massive tools
+  via tool embeddings.
+\newblock \emph{Advances in Neural Information Processing Systems}, 36, 2024.
+
+\bibitem[Holm(1979)]{holm1979bonferroni}
+Sture Holm.
+\newblock A simple sequentially rejective multiple test procedure.
+\newblock \emph{Scandinavian Journal of Statistics}, pages 65--70, 1979.
+
+\bibitem[Lewis et~al.(2020)Lewis, Perez, Piktus, Petroni, Karpukhin, Goyal,
+  K{\"u}ttler, Lewis, Yih, Rockt{\"a}schel, et~al.]{lewis2020rag}
+Patrick Lewis, Ethan Perez, Aleksandra Piktus, Fabio Petroni, Vladimir
+  Karpukhin, Naman Goyal, Heinrich K{\"u}ttler, Mike Lewis, Wen-tau Yih, Tim
+  Rockt{\"a}schel, et~al.
+\newblock Retrieval-augmented generation for knowledge-intensive {NLP} tasks.
+\newblock \emph{Advances in Neural Information Processing Systems},
+  33:\penalty0 9459--9474, 2020.
+
+\bibitem[Manning et~al.(2008)Manning, Raghavan, and Sch{\"u}tze]{manning2008ir}
+Christopher~D Manning, Prabhakar Raghavan, and Hinrich Sch{\"u}tze.
+\newblock \emph{Introduction to Information Retrieval}.
+\newblock Cambridge University Press, 2008.
+
+\bibitem[McNemar(1947)]{mcnemar1947note}
+Quinn McNemar.
+\newblock Note on the sampling error of the difference between correlated
+  proportions or percentages.
+\newblock volume~12, pages 153--157, 1947.
+
+\bibitem[{OpenAI}(2024)]{openai2024function}
+{OpenAI}.
+\newblock Function calling and tool use with {GPT} models.
+\newblock 2024.
+\newblock URL \url{https://platform.openai.com/docs/guides/function-calling}.
+
+\bibitem[Page et~al.(1999)Page, Brin, Motwani, and Winograd]{page1999pagerank}
+Lawrence Page, Sergey Brin, Rajeev Motwani, and Terry Winograd.
+\newblock The {PageRank} citation ranking: Bringing order to the web.
+\newblock \emph{Stanford InfoLab}, 1999.
+
+\bibitem[Patil et~al.(2023)Patil, Zhang, Wang, and Gonzalez]{patil2023gorilla}
+Shishir~G Patil, Tianjun Zhang, Xin Wang, and Joseph~E Gonzalez.
+\newblock Gorilla: Large language model connected with massive {APIs}.
+\newblock \emph{arXiv preprint arXiv:2305.15334}, 2023.
+
+\bibitem[Qin et~al.(2024)Qin, Liang, Ye, Zhu, Yan, Lu, Lin, Cong, Tang, Qian,
+  et~al.]{qin2024toolllm}
+Yujia Qin, Shihao Liang, Yining Ye, Kunlun Zhu, Lan Yan, Yaxi Lu, Yankai Lin,
+  Xin Cong, Xiangru Tang, Bill Qian, et~al.
+\newblock Toolllm: Facilitating large language models to master 16000+
+  real-world {APIs}.
+\newblock \emph{arXiv preprint arXiv:2307.16789}, 2024.
+
+\bibitem[Qu et~al.(2024)Qu, Liu, Wu, Zhao, Yin, Cao, et~al.]{qu2024toolnet}
+Xukun Qu, Yixiao Liu, Shuo Wu, Junhao Zhao, Haotian Yin, Zhi Cao, et~al.
+\newblock {ToolNet}: Connecting large language models with massive tools via
+  tool graph.
+\newblock \emph{arXiv preprint arXiv:2403.00839}, 2024.
+
+\bibitem[{Qwen Team}(2024)]{qwen2coder2024}
+{Qwen Team}.
+\newblock {Qwen2.5-Coder} technical report.
+\newblock 2024.
+
+\bibitem[Ribeiro et~al.(2017)Ribeiro, Saverese, and
+  Figueiredo]{ribeiro2017struc2vec}
+Leonardo~F.R. Ribeiro, Pedro~H.P. Saverese, and Daniel~R. Figueiredo.
+\newblock struc2vec: Learning structural node embeddings.
+\newblock In \emph{Proceedings of the 23rd ACM SIGKDD International Conference
+  on Knowledge Discovery and Data Mining}, pages 385--394, 2017.
+
+\bibitem[Robertson and Zaragoza(2009)]{robertson2009bm25}
+Stephen Robertson and Hugo Zaragoza.
+\newblock The probabilistic relevance framework: {BM25} and beyond.
+\newblock In \emph{Foundations and Trends in Information Retrieval}, volume~3,
+  pages 333--389, 2009.
+
+\bibitem[Salton and Buckley(1988)]{salton1988tfidf}
+Gerard Salton and Christopher Buckley.
+\newblock Term-weighting approaches in automatic text retrieval.
+\newblock \emph{Information Processing \& Management}, 24\penalty0
+  (5):\penalty0 513--523, 1988.
+
+\bibitem[Schick et~al.(2024)Schick, Dwivedi-Yu, Dess{\`\i}, Raileanu, Lomeli,
+  Hambro, Zettlemoyer, Cancedda, and Scialom]{schick2024toolformer}
+Timo Schick, Jane Dwivedi-Yu, Roberto Dess{\`\i}, Roberta Raileanu, Maria
+  Lomeli, Eric Hambro, Luke Zettlemoyer, Nicola Cancedda, and Thomas Scialom.
+\newblock Toolformer: Language models can teach themselves to use tools.
+\newblock \emph{Advances in Neural Information Processing Systems}, 36, 2024.
+
+\bibitem[Shen et~al.(2024)Shen, Song, Tan, Li, Lu, and
+  Zhuang]{shen2024hugginggpt}
+Yongliang Shen, Kaitao Song, Xu~Tan, Dongsheng Li, Weiming Lu, and Yueting
+  Zhuang.
+\newblock {HuggingGPT}: Solving {AI} tasks with {ChatGPT} and its friends in
+  {Hugging Face}.
+\newblock \emph{Advances in Neural Information Processing Systems}, 36, 2024.
+
+\bibitem[Xu et~al.(2024)Xu, Zhang, and Liu]{xu2024ragmcp}
+Cheng Xu, Wei Zhang, and Yang Liu.
+\newblock Retrieval-augmented tool selection for {MCP} servers.
+\newblock In \emph{Proceedings of the Workshop on LLM Agents}, 2024.
+
+\bibitem[Yang et~al.(2024)Yang, Cao, Chen, et~al.]{yang2024toolgen}
+Renxi Yang, Hanfeng Cao, Jiani Chen, et~al.
+\newblock {ToolGen}: Unified tool retrieval and calling via generation.
+\newblock \emph{arXiv preprint arXiv:2410.03439}, 2024.
+
+\end{thebibliography}

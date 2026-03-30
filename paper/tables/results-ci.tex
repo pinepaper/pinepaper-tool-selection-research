@@ -1,0 +1,18 @@
+\begin{table}[t]
+\centering
+\caption{Tool selection results with 95\% bootstrap confidence intervals.}
+\label{tab:results-ci}
+\begin{tabular}{lcccc}
+\toprule
+Method & R@1 & R@5 & NDCG@5 & MRR \\
+\midrule
+Random & 0.025$_{\pm0.01}$ & 0.154$_{\pm0.03}$ & 0.095$_{\pm0.02}$ & 0.124$_{\pm0.02}$ \\
+Keyword Match & 0.532$_{\pm0.04}$ & 0.842$_{\pm0.03}$ & 0.731$_{\pm0.03}$ & 0.771$_{\pm0.03}$ \\
+BM25 & 0.582$_{\pm0.04}$ & 0.892$_{\pm0.03}$ & 0.791$_{\pm0.03}$ & 0.814$_{\pm0.03}$ \\
+TF-IDF + Cosine & 0.511$_{\pm0.04}$ & 0.876$_{\pm0.03}$ & 0.751$_{\pm0.03}$ & 0.764$_{\pm0.03}$ \\
+KG-Text-Only & 0.532$_{\pm0.04}$ & 0.842$_{\pm0.03}$ & 0.731$_{\pm0.03}$ & 0.771$_{\pm0.03}$ \\
+KG-ToolRank & 0.394$_{\pm0.04}$ & 0.706$_{\pm0.04}$ & 0.591$_{\pm0.03}$ & 0.619$_{\pm0.04}$ \\
+KG-Hybrid & \textbf{0.591$_{\pm0.04}$} & \textbf{0.897$_{\pm0.02}$} & \textbf{0.800$_{\pm0.03}$} & \textbf{0.824$_{\pm0.03}$} \\
+\bottomrule
+\end{tabular}
+\end{table}
