@@ -26,9 +26,9 @@
 \begin{abstract}
 % ============================================================================
 
-As LLM agent tool catalogs grow into the hundreds, selecting the right tools from a Model Context Protocol (MCP) server becomes a retrieval problem. Yet no public benchmark exists for evaluating tool selection methods in this setting. We introduce \textbf{PinePaper-ToolBench}, a benchmark of 559 test cases across 6 complexity tiers---from single-tool explicit queries to cross-domain ambiguous requests---covering 124 MCP tools for creative design.
+As LLM agent tool catalogs grow into the hundreds, selecting the right tools from a Model Context Protocol (MCP) server becomes a retrieval problem. Yet no public benchmark exists for evaluating tool selection methods in this setting. We introduce \textbf{PinePaper-ToolBench}, a benchmark of 582 test cases across 6 complexity tiers---from single-tool explicit queries to cross-domain ambiguous requests---covering 212 MCP tools for creative design.
 
-Using this benchmark, we find that \textbf{BM25 over taxonomy-enriched documents is already highly effective}, achieving Recall@5 of 0.855. We then ask: does structured knowledge help? We evaluate \textbf{KG-Hybrid}, a two-phase method that augments BM25 with knowledge graph structural re-ranking via method-to-tool linking. KG-Hybrid achieves the highest Recall@5 of \textbf{0.868}, with the improvement over BM25 not statistically significant at the aggregate level ($p=0.095$), though gains concentrate on compositional and cross-domain tiers. The gains are largest on harder tiers: on compositional queries (T4), KG-Hybrid reaches 0.933 vs.\ BM25's 0.896 (+3.7 points); on cross-domain ambiguous queries (T6), KG-Hybrid scores 0.611 vs.\ 0.580 (\textbf{+3.1 points}). Ablation studies confirm that method-to-tool \texttt{implements} edges provide the primary structural signal, while graph propagation (PPR) has negligible effect.
+Using this benchmark, we find that \textbf{BM25 over taxonomy-enriched documents is already highly effective}, achieving Recall@5 of 0.854. We then ask: does structured knowledge help? We evaluate \textbf{KG-Hybrid}, a two-phase method that augments BM25 with knowledge graph structural re-ranking via method-to-tool linking. KG-Hybrid achieves the highest Recall@5 of \textbf{0.868}, with the improvement over BM25 statistically significant at the aggregate level ($p=0.045$), though gains concentrate on compositional and cross-domain tiers. The gains are largest on harder tiers: on compositional queries (T4), KG-Hybrid reaches 0.932 vs.\ BM25's 0.892 (+4.0 points); on cross-domain ambiguous queries (T6), KG-Hybrid scores 0.608 vs.\ 0.578 (\textbf{+3.0 points}). Ablation studies confirm that method-to-tool \texttt{implements} edges provide the primary structural signal, while graph propagation (PPR) has negligible effect.
 
 We validate at scale with an extended benchmark (Track~B) of 1,000+ cases over 500+ tools using vocabulary-separated synthetic tool generation with full KG integration. All code, benchmark data, and statistical tests are open-sourced to support reproducibility and future work on tool selection for LLM agents.
 
@@ -39,17 +39,17 @@ We validate at scale with an extended benchmark (Track~B) of 1,000+ cases over 5
 \label{sec:intro}
 % ============================================================================
 
-The Model Context Protocol (MCP)~\citep{mcp2024} enables LLM agents to invoke external tools through a standardized interface, complementing function-calling capabilities now available across major LLM providers~\citep{openai2024function}. Production MCP servers now expose hundreds of tools: PinePaper Studio's creative design server, for example, provides 124 tools and 39 generators spanning shapes, animations, filters, diagrams, and rigging operations. When an LLM agent receives a user instruction, it must select the correct subset of tools from this catalog to fulfill the request.
+The Model Context Protocol (MCP)~\citep{mcp2024} enables LLM agents to invoke external tools through a standardized interface, complementing function-calling capabilities now available across major LLM providers~\citep{openai2024function}. Production MCP servers now expose hundreds of tools: PinePaper Studio's creative design server, for example, provides 212 tools and 39 generators spanning shapes, animations, filters, diagrams, and rigging operations. When an LLM agent receives a user instruction, it must select the correct subset of tools from this catalog to fulfill the request.
 
 The simplest approach---enumerating all tool schemas in the LLM prompt---becomes untenable as tool counts grow. A 500-tool catalog with typical JSON schemas can consume 50,000+ tokens, exceeding context limits and degrading selection accuracy due to attention dilution. Prior work has explored tool retrieval via embedding similarity~\citep{patil2023gorilla}, tool graphs~\citep{qu2024toolnet}, and generation-based approaches~\citep{yang2024toolgen}. However, no public benchmark exists for systematically evaluating tool selection methods in MCP-based agent systems, and it remains unclear whether structured knowledge (e.g., knowledge graphs capturing tool relationships) provides meaningful gains over simple lexical retrieval baselines.
 
-We address both gaps. First, we introduce \textbf{PinePaper-ToolBench}, a public benchmark with 559 test cases across 6 complexity tiers and 124 MCP tools. Second, we use this benchmark to evaluate whether knowledge graph features improve tool selection beyond BM25. Our key finding is nuanced: \textbf{BM25 over taxonomy-enriched documents is surprisingly competitive} (Recall@5 = 0.855), and KG augmentation provides targeted gains that concentrate on compositional and cross-domain queries---precisely the hard cases where lexical matching fails---though the aggregate improvement is not statistically significant ($p=0.095$).
+We address both gaps. First, we introduce \textbf{PinePaper-ToolBench}, a public benchmark with 582 test cases across 6 complexity tiers and 212 MCP tools. Second, we use this benchmark to evaluate whether knowledge graph features improve tool selection beyond BM25. Our key finding is nuanced: \textbf{BM25 over taxonomy-enriched documents is surprisingly competitive} (Recall@5 = 0.855), and KG augmentation provides targeted gains that concentrate on compositional and cross-domain queries---precisely the hard cases where lexical matching fails---though the aggregate improvement is statistically significant ($p=0.045$).
 
 \paragraph{Contributions.}
 \begin{enumerate}
-  \item \textbf{PinePaper-ToolBench}: The first public benchmark for MCP tool selection, with 559 test cases across 6 complexity tiers, per-query ground truth, and difficulty annotations. Extended to 1,000+ cases over 500+ tools in Track~B.\footnote{Benchmark data and code: \url{https://github.com/pinepaper/pinepaper-tool-selection-research}}
-  \item \textbf{Strong BM25 baseline}: We show that BM25 over taxonomy-enriched documents achieves Recall@5 of 0.855 with 94\% token reduction, establishing a high bar for future methods.
-  \item \textbf{Targeted KG gains}: KG-Hybrid achieves 0.868 R@5, the highest among all methods. The aggregate improvement over BM25 is not statistically significant ($p=0.095$), but gains concentrate on compositional (T4: +3.7) and cross-domain (T6: +3.1 points) queries, with full ablation studies, hyperparameter sweeps, and statistical significance tests.
+  \item \textbf{PinePaper-ToolBench}: The first public benchmark for MCP tool selection, with 582 test cases across 6 complexity tiers, per-query ground truth, and difficulty annotations. Extended to 1,000+ cases over 500+ tools in Track~B.\footnote{Benchmark data and code: \url{https://github.com/pinepaper/pinepaper-tool-selection-research}}
+  \item \textbf{Strong BM25 baseline}: We show that BM25 over taxonomy-enriched documents achieves Recall@5 of 0.854 with 94\% token reduction, establishing a high bar for future methods.
+  \item \textbf{Targeted KG gains}: KG-Hybrid achieves 0.868 R@5, the highest among all methods. The aggregate improvement over BM25 is statistically significant ($p=0.045$), with gains concentrating on compositional (T4: +4.0) and cross-domain (T6: +3.0 points) queries, with full ablation studies, hyperparameter sweeps, and statistical significance tests.
 \end{enumerate}
 
 % ============================================================================
@@ -76,8 +76,8 @@ BM25~\citep{robertson2009bm25} remains a strong baseline for document retrieval~
 The PinePaper knowledge graph is constructed from three sources:
 
 \begin{enumerate}
-  \item \textbf{Design taxonomy}: 109 design methods organized into 15 categories (shapes, styling, animations, relations, filters, effects, diagrams, etc.), each mapped to one or more MCP tools via \texttt{implements} edges.
-  \item \textbf{Tool manifest}: 124 MCP tools and 39 generators with their JSON schemas, descriptions, and tags.
+  \item \textbf{Design taxonomy}: 178 design methods organized into 18 categories (shapes, styling, animations, relations, filters, effects, diagrams, 3D, path operations, data visualization, etc.), each mapped to one or more MCP tools via \texttt{implements} edges.
+  \item \textbf{Tool manifest}: 212 MCP tools and 39 generators with their JSON schemas, descriptions, and tags.
   \item \textbf{Structural fingerprints}: 16-dimensional vectors per node capturing node type, degree, edge type distribution, and neighbor type distribution, used to compute cosine-similarity-based \texttt{similar} edges~\citep{ribeiro2017struc2vec}.
 \end{enumerate}
 
@@ -135,7 +135,7 @@ where $\hat{s}$ denotes min-max normalization to $[0, 1]$ and $\alpha$ controls 
 \label{sec:dataset}
 % ============================================================================
 
-We introduce PinePaper-ToolBench, a benchmark for evaluating tool selection in creative design MCP servers. The benchmark consists of 559 test cases organized into 6 complexity tiers:
+We introduce PinePaper-ToolBench, a benchmark for evaluating tool selection in creative design MCP servers. The benchmark consists of 582 test cases organized into 6 complexity tiers:
 
 \begin{table}[h]
 \centering
@@ -145,17 +145,17 @@ We introduce PinePaper-ToolBench, a benchmark for evaluating tool selection in c
 \toprule
 Tier & Description & Cases & Example \\
 \midrule
-T1 & Single-tool, explicit & 108 & ``Create a circle at (200, 300)'' \\
-T2 & Single-tool, implicit & 105 & ``I need a pulsing glow effect'' \\
-T3 & Multi-tool sequential (2) & 98 & ``Draw a star and animate it'' \\
-T4 & Multi-tool compositional (3+) & 72 & ``Build a flowchart with transitions'' \\
+T1 & Single-tool, explicit & 117 & ``Create a circle at (200, 300)'' \\
+T2 & Single-tool, implicit & 111 & ``I need a pulsing glow effect'' \\
+T3 & Multi-tool sequential (2) & 101 & ``Draw a star and animate it'' \\
+T4 & Multi-tool compositional (3+) & 74 & ``Build a flowchart with transitions'' \\
 T5 & Generator-requiring & 60 & ``Generate a sunburst background'' \\
-T6 & Cross-domain ambiguous & 116 & ``Make it look cinematic'' \\
+T6 & Cross-domain ambiguous & 119 & ``Make it look cinematic'' \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-Test cases span all 15 taxonomy categories and cover all 124 MCP tools. Each case includes a natural language instruction, ground-truth expected tools, taxonomy method mappings, difficulty level (easy/medium/hard), and domain annotations. T1--T2 test single-tool retrieval accuracy, T3--T4 test multi-tool recall, T5 tests generator discovery, and T6 tests cross-domain generalization. T6 was rebalanced to cover all 17 design categories (up from 4 in the initial release), ensuring broad cross-domain coverage.
+Test cases span all 18 taxonomy categories and cover all 212 MCP tools. Each case includes a natural language instruction, ground-truth expected tools, taxonomy method mappings, difficulty level (easy/medium/hard), and domain annotations. T1--T2 test single-tool retrieval accuracy, T3--T4 test multi-tool recall, T5 tests generator discovery, and T6 tests cross-domain generalization. T6 was rebalanced to cover all 18 design categories, ensuring broad cross-domain coverage.
 
 \paragraph{Evaluation metrics.}
 We use standard information retrieval metrics computed per query and averaged:
@@ -186,7 +186,7 @@ We compare 7 methods, all operating on the same tokenization (lowercase, punctua
 
 \subsection{Statistical Tests}
 
-All comparisons use paired tests over the 559 per-query scores:
+All comparisons use paired tests over the 582 per-query scores:
 \begin{itemize}
   \item \textbf{Paired $t$-test} for mean metric differences.
   \item \textbf{Wilcoxon signed-rank test} as a non-parametric alternative.
@@ -203,28 +203,28 @@ All comparisons use paired tests over the 559 per-query scores:
 
 \subsection{Main Results}
 
-Table~\ref{tab:main-results} presents aggregate results across all 559 test cases.
+Table~\ref{tab:main-results} presents aggregate results across all 582 test cases.
 
 \begin{table}[t]
 \centering
-\caption{Aggregate tool selection results (559 cases). Best values in bold.}
+\caption{Aggregate tool selection results (582 cases). Best values in bold.}
 \label{tab:main-results}
 \begin{tabular}{lrrrrrr}
 \toprule
 Method & R@1 & R@3 & R@5 & NDCG@5 & MRR & Latency \\
 \midrule
-Random & 0.025 & 0.074 & 0.108 & 0.072 & 0.089 & ${<}0.1$\,ms \\
-Keyword & 0.533 & 0.747 & 0.817 & 0.704 & 0.741 & 0.14\,ms \\
-TF-IDF & 0.503 & 0.763 & 0.841 & 0.716 & 0.731 & ${<}0.1$\,ms \\
-BM25 & 0.578 & 0.786 & 0.855 & 0.753 & 0.778 & ${<}0.1$\,ms \\
-KG-Text-Only & 0.533 & 0.747 & 0.817 & 0.704 & 0.741 & 0.14\,ms \\
-KG-ToolRank & 0.364 & 0.579 & 0.634 & 0.525 & 0.551 & 0.42\,ms \\
-\textbf{KG-Hybrid} & \textbf{0.579} & \textbf{0.821} & \textbf{0.868} & \textbf{0.767} & \textbf{0.786} & 0.20\,ms \\
+Random & 0.022 & 0.061 & 0.107 & 0.066 & 0.083 & ${<}0.1$\,ms \\
+Keyword & 0.512 & 0.732 & 0.814 & 0.702 & 0.738 & 0.2\,ms \\
+TF-IDF & 0.493 & 0.749 & 0.840 & 0.716 & 0.732 & ${<}0.1$\,ms \\
+BM25 & 0.567 & 0.775 & 0.854 & 0.757 & 0.783 & ${<}0.1$\,ms \\
+KG-Text-Only & 0.512 & 0.732 & 0.814 & 0.702 & 0.738 & 0.2\,ms \\
+KG-ToolRank & 0.452 & 0.642 & 0.702 & 0.617 & 0.646 & 0.5\,ms \\
+\textbf{KG-Hybrid} & \textbf{0.568} & \textbf{0.806} & \textbf{0.868} & \textbf{0.769} & \textbf{0.788} & 0.2\,ms \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-KG-Hybrid achieves the highest accuracy across all metrics. The improvement over BM25 is consistent: +0.1 R@1, +3.5 R@3, +1.3 R@5, +1.4 NDCG@5, +0.8 MRR (all in percentage points). However, the aggregate R@5 improvement is not statistically significant ($p=0.095$; Table~\ref{tab:significance}), with gains concentrating on compositional and cross-domain tiers. All methods run in sub-millisecond time; BM25 and KG-Hybrid both complete in under 0.2\,ms per query. Latency assumes in-memory indices (BM25 IDF cache, KG adjacency lists, pre-computed related-method maps) built once at server initialization; cold-start graph construction adds $\sim$50\,ms.
+KG-Hybrid achieves the highest accuracy across all metrics. The improvement over BM25 is consistent: +0.1 R@1, +3.1 R@3, +1.4 R@5, +1.2 NDCG@5, +0.5 MRR (all in percentage points). However, the aggregate R@5 improvement is statistically significant ($p=0.045$; Table~\ref{tab:significance}), with gains concentrated on compositional and cross-domain tiers. All methods run in sub-millisecond time; BM25 and KG-Hybrid both complete in under 0.2\,ms per query. Latency assumes in-memory indices (BM25 IDF cache, KG adjacency lists, pre-computed related-method maps) built once at server initialization; cold-start graph construction adds $\sim$50\,ms.
 
 \subsection{Per-Tier Analysis}
 
@@ -232,18 +232,18 @@ Table~\ref{tab:per-tier} reveals where KG features contribute most.
 
 \begin{table}[t]
 \centering
-\caption{Recall@5 by complexity tier (559 cases). Best values in bold.}
+\caption{Recall@5 by complexity tier (582 cases). Best values in bold.}
 \label{tab:per-tier}
 \begin{tabular}{lrrrrrr}
 \toprule
 Method & T1 & T2 & T3 & T4 & T5 & T6 \\
 \midrule
-Random & 0.102 & 0.105 & 0.092 & 0.106 & 0.083 & 0.147 \\
-Keyword & \textbf{0.991} & 0.895 & 0.867 & 0.759 & 0.800 & 0.585 \\
-BM25 & \textbf{0.991} & \textbf{0.914} & 0.908 & 0.896 & \textbf{0.900} & 0.580 \\
-TF-IDF & \textbf{0.991} & 0.886 & 0.908 & 0.866 & \textbf{0.900} & 0.559 \\
-KG-ToolRank & 0.676 & 0.695 & 0.684 & 0.645 & 0.600 & 0.507 \\
-KG-Hybrid & \textbf{0.991} & 0.895 & \textbf{0.939} & \textbf{0.933} & \textbf{0.900} & \textbf{0.611} \\
+Random & 0.111 & 0.117 & 0.109 & 0.103 & 0.100 & 0.097 \\
+Keyword & \textbf{0.991} & 0.883 & 0.866 & 0.757 & 0.783 & 0.583 \\
+BM25 & 0.983 & \textbf{0.910} & 0.911 & 0.892 & \textbf{0.900} & 0.578 \\
+TF-IDF & \textbf{0.991} & 0.883 & 0.911 & 0.857 & \textbf{0.900} & 0.549 \\
+KG-ToolRank & 0.658 & 0.739 & 0.807 & 0.704 & 0.767 & 0.587 \\
+KG-Hybrid & \textbf{0.991} & 0.892 & \textbf{0.941} & \textbf{0.932} & \textbf{0.900} & \textbf{0.608} \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -253,7 +253,7 @@ Key observations:
   \item \textbf{T1} (explicit single-tool): BM25 and KG-Hybrid both achieve 0.991---near-perfect recall. No structural signal needed when the query names the tool.
   \item \textbf{T2} (implicit single-tool): BM25 outperforms KG-Hybrid (0.914 vs.\ 0.895, $-1.9$ points, $d=-0.08$). This is a \emph{regression}: for implicit but single-tool queries (e.g., ``I need a pulsing glow effect''), the KG structural signal introduces noise by boosting structurally related tools, diluting the correct lexical match.
   \item \textbf{T3--T4} (multi-tool): KG-Hybrid gains on both sequential (T3: +3.1 points, $d=0.22$) and compositional (T4: +3.7 points, $d=0.29$) queries. Method linking surfaces tools that are structurally related to matched methods even when not lexically present in the query.
-  \item \textbf{T6} (cross-domain ambiguous): KG-Hybrid at 0.611 vs.\ BM25 at 0.580 (+3.1 points, $d=0.12$). After rebalancing T6 to cover all 17 design categories (up from 4), the gap narrows but remains the largest per-tier improvement. The \texttt{implements} edges bridge domain boundaries for queries like ``make it look cinematic.''
+  \item \textbf{T6} (cross-domain ambiguous): KG-Hybrid at 0.611 vs.\ BM25 at 0.580 (+3.1 points, $d=0.12$). After rebalancing T6 to cover all 18 design categories (up from 4), the gap narrows but remains the largest per-tier improvement. The \texttt{implements} edges bridge domain boundaries for queries like ``make it look cinematic.''
   \item \textbf{KG-ToolRank} underperforms BM25 by 22.1 points overall. This is because KG-ToolRank operates on the raw tool manifest (different text content than the taxonomy-enriched corpus) and incurs name-mapping overhead.
 \end{itemize}
 
@@ -263,25 +263,25 @@ Table~\ref{tab:significance} presents pairwise statistical comparisons against K
 
 \begin{table}[t]
 \centering
-\caption{Pairwise statistical comparisons on R@5 (559 queries). Each row shows how much KG-Hybrid (reference) outperforms the listed method.}
+\caption{Pairwise statistical comparisons on R@5 (582 queries). Each row shows how much KG-Hybrid (reference) outperforms the listed method.}
 \label{tab:significance}
 \begin{tabular}{lrrrr}
 \toprule
 Method & $\Delta$R@5 & $t$-stat & $p$-value & Cohen's $d$ \\
 \midrule
-Random & +0.760 & 44.7 & $<$0.001*** & 1.95 (L) \\
-Keyword & +0.051 & 4.3 & $<$0.001*** & 0.19 (N) \\
-TF-IDF & +0.027 & 3.5 & $<$0.001*** & 0.15 (N) \\
-BM25 & +0.013 & 1.67 & 0.095 & 0.07 (N) \\
-KG-Text-Only & +0.051 & 4.3 & $<$0.001*** & 0.19 (N) \\
-KG-ToolRank & +0.234 & 10.8 & $<$0.001*** & 0.47 (S) \\
+Random & +0.761 & 42.1 & $<$0.001*** & 1.81 (L) \\
+Keyword & +0.054 & 3.8 & $<$0.001*** & 0.17 (N) \\
+TF-IDF & +0.028 & 3.1 & $<$0.001*** & 0.15 (N) \\
+BM25 & +0.015 & 2.01 & 0.045* & 0.08 (N) \\
+KG-Text-Only & +0.054 & 3.8 & $<$0.001*** & 0.17 (N) \\
+KG-ToolRank & +0.166 & 7.7 & $<$0.001*** & 0.36 (S) \\
 \bottomrule
 \end{tabular}
 \vspace{2pt}
-\footnotesize{$^{***}p<0.001$. N=negligible, S=small, L=large effect. Holm-Bonferroni corrected.}
+\footnotesize{$^{**}p<0.01$, $^{***}p<0.001$. N=negligible, S=small, L=large effect. Holm-Bonferroni corrected.}
 \end{table}
 
-KG-Hybrid significantly outperforms all baselines except standalone BM25, where the aggregate improvement is not statistically significant ($p=0.095$, Cohen's $d=0.07$). Per-tier analysis reveals the mechanism: KG features are inert on easy tiers (T1: $d=0.00$, T5: $d=0.00$), mildly harmful on implicit single-tool queries (T2: $d=-0.08$), and beneficial on multi-tool and cross-domain queries (T3: $d=0.22$, T4: $d=0.29$, T6: $d=0.12$). The KG operates as a \emph{specialized} mechanism for compositional intent, not a general-purpose booster. This motivates a tiered routing strategy: BM25 for simple queries, KG-Hybrid when composition or cross-domain bridging is needed.
+KG-Hybrid significantly outperforms all baselines, including BM25 ($p=0.045$, Cohen's $d=0.08$, negligible effect size). Per-tier analysis reveals the mechanism: KG features are inert on easy tiers (T1: $d=0.00$, T5: $d=0.00$), mildly harmful on implicit single-tool queries (T2: $d=-0.08$), and beneficial on multi-tool and cross-domain queries (T3: $d=0.22$, T4: $d=0.29$, T6: $d=0.12$). The KG operates as a \emph{specialized} mechanism for compositional intent, not a general-purpose booster. This motivates a tiered routing strategy: BM25 for simple queries, KG-Hybrid when composition or cross-domain bridging is needed.
 
 % ============================================================================
 \section{Ablation Study}
@@ -294,18 +294,18 @@ Table~\ref{tab:ablation} isolates the contribution of each KG-Hybrid component.
 
 \begin{table}[t]
 \centering
-\caption{Ablation study (559 cases). $\Delta$ relative to full KG-Hybrid.}
+\caption{Ablation study (582 cases). $\Delta$ relative to full KG-Hybrid.}
 \label{tab:ablation}
 \begin{tabular}{lrrrr}
 \toprule
 Variant & R@1 & R@5 & NDCG@5 & MRR \\
 \midrule
-KG-Hybrid (Full) & 0.564 & 0.868 & 0.767 & 0.786 \\
-KG-NoPPR ($\lambda=0$) & 0.561 & 0.865 & 0.765 & 0.785 \\
-KG-TextOnly ($\alpha=1.0$) & 0.557 & 0.855 & 0.753 & 0.778 \\
-KG-HighAlpha ($\alpha=0.8$) & \textbf{0.567} & \textbf{0.871} & \textbf{0.769} & \textbf{0.789} \\
-KG-LowAlpha ($\alpha=0.4$) & 0.517 & 0.856 & 0.741 & 0.753 \\
-KG-EqualWeight ($\alpha=0.5$) & 0.535 & 0.864 & 0.753 & 0.768 \\
+KG-Hybrid (Full) & 0.568 & \textbf{0.868} & 0.769 & 0.788 \\
+KG-NoPPR ($\lambda=0$) & 0.570 & 0.866 & 0.769 & 0.790 \\
+KG-TextOnly ($\alpha=1.0$) & 0.567 & 0.854 & 0.757 & 0.783 \\
+KG-HighAlpha ($\alpha=0.8$) & \textbf{0.574} & 0.866 & \textbf{0.771} & \textbf{0.792} \\
+KG-LowAlpha ($\alpha=0.4$) & 0.521 & 0.855 & 0.742 & 0.756 \\
+KG-EqualWeight ($\alpha=0.5$) & 0.541 & 0.864 & 0.755 & 0.771 \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -324,7 +324,7 @@ Figure~\ref{fig:alpha-sweep} shows Recall@5 as a function of the fusion weight $
 
 \begin{table}[t]
 \centering
-\caption{Recall@5 vs.\ fusion weight $\alpha$ (559 cases). Plateau at $\alpha=0.6$--$0.8$.}
+\caption{Recall@5 vs.\ fusion weight $\alpha$ (582 cases). Plateau at $\alpha=0.6$--$0.8$.}
 \label{fig:alpha-sweep}
 \begin{tabular}{rrr}
 \toprule
@@ -356,7 +356,7 @@ The PPR damping factor $\lambda$ has minimal impact: sweeping $\lambda \in \{0.0
 \label{sec:scale}
 % ============================================================================
 
-While Track~A (559 cases, 124 tools) shows KG-Hybrid achieving the highest R@5, the aggregate improvement over BM25 is not statistically significant ($p=0.095$, $d=0.07$), with gains concentrated on harder tiers. To test whether KG features provide larger gains as the tool catalog grows---the scenario motivating this work---we construct an extended benchmark (Track~B) with 500+ tools and 1,000+ test cases.
+While Track~A (582 cases, 212 tools) shows KG-Hybrid achieving the highest R@5, the aggregate improvement over BM25 is statistically significant ($p=0.045$, $d=0.08$), with gains concentrated on harder tiers. To test whether KG features provide larger gains as the tool catalog grows---the scenario motivating this work---we construct an extended benchmark (Track~B) with 500+ tools and 1,000+ test cases.
 
 \subsection{Vocabulary Gap Analysis}
 
@@ -388,7 +388,7 @@ The resulting vocabulary overlap between synthetic queries and tool descriptions
 \subsection{Two-Track Design}
 
 \begin{itemize}
-  \item \textbf{Track A}: 559 cases over 124 real tools (Section~\ref{sec:results}).
+  \item \textbf{Track A}: 582 cases over 212 real tools (Section~\ref{sec:results}).
   \item \textbf{Track B}: Extended 1,000+ cases over 500+ tools (124 real + 400 synthetic), with augmented KG. Test cases include original cases (preserved for comparability), paraphrased variants ($\sim$200), and synthetic queries ($\sim$350) with adjusted tier distribution favoring multi-step scenarios (T3: 22\%, T4: 16\%, T6: 14\%).
 \end{itemize}
 
@@ -424,10 +424,10 @@ The source breakdown (Table~\ref{tab:extended-source}) validates that KG-Hybrid 
 Compositional queries (T4) often reference multiple design concepts without naming specific tools. For example, ``Build a flowchart with animated transitions and export it'' requires three tools (\texttt{create\_diagram\_shape}, \texttt{animate}, \texttt{export}). BM25 can match ``flowchart'' and ``animate'' but may miss ``export'' if the query phrasing is indirect. KG method linking discovers that the matched design methods \emph{implement} these tools, boosting them in the final ranking. Cross-domain queries (T6) benefit similarly: ``make it look cinematic'' matches methods across styling, animation, and filter categories, whose \texttt{implements} edges point to the correct tools.
 
 \paragraph{Why KG-ToolRank underperforms.}
-The full KGQueryEngine.findTools() operates on the raw tool manifest, which contains different text content than the taxonomy-enriched corpus. Additionally, name mismatches between manifest tool names and taxonomy identifiers (e.g., \texttt{pinepaper\_apply\_effect} $\rightarrow$ \texttt{pinepaper\_add\_effect}) require a mapping layer that introduces information loss. KG-Hybrid avoids this by using the taxonomy corpus for BM25 and the KG only for structural re-ranking.
+The KGQueryEngine.findTools() operates on the raw tool manifest with a canonical tool registry that resolves name variants (e.g., \texttt{pinepaper\_apply\_effect} $\rightarrow$ \texttt{pinepaper\_add\_effect}). While this registry improves name resolution, the tool manifest contains different text content than the taxonomy-enriched corpus, leading to lower recall than BM25 over enriched documents. KG-Hybrid avoids this by using the taxonomy corpus for BM25 and the KG only for structural re-ranking.
 
 \paragraph{Token reduction.}
-With 124 tools, the full catalog consumes approximately 12,000 tokens when serialized as JSON schemas. KG-Hybrid's top-5 selection reduces this to approximately 700 tokens---a 94\% reduction---while maintaining 86.8\% recall of the ground-truth tools. This enables the LLM to focus its attention on relevant tools, improving both accuracy and latency.
+With 212 tools, the full catalog consumes approximately 20,000 tokens when serialized as JSON schemas. KG-Hybrid's top-5 selection reduces this to approximately 700 tokens---a 94\% reduction---while maintaining 86.8\% recall of the ground-truth tools. This enables the LLM to focus its attention on relevant tools, improving both accuracy and latency.
 
 \paragraph{KG contribution by source.}
 The Track~B source breakdown (Table~\ref{tab:extended-source}) reveals where KG features matter most. On original test cases (shared with Track~A), results are consistent with Track~A findings. On synthetic queries---where intent-based templates use noun aliases rather than raw tool nouns, producing only $\sim$7\% vocabulary overlap with tool descriptions (down from $\sim$24\% in the real taxonomy)---BM25 loses the free lexical signal it previously exploited. KG-Hybrid bridges this vocabulary gap through two structural mechanisms: (1) \texttt{implements} edges from matched design methods, and (2) shell \texttt{uses} edges that connect user-vocabulary surface descriptions to technical-vocabulary interior tools. This validates the hypothesis that KG structure becomes more valuable as the vocabulary gap between user queries and tool descriptions widens---precisely the scenario encountered in production tool catalogs.
@@ -437,7 +437,7 @@ KG-Hybrid depends on a manually curated design taxonomy that maps methods to too
 
 \paragraph{Limitations.}
 \begin{itemize}
-  \item On Track~A (559 cases, 124 tools), the improvement over BM25 is not statistically significant at the aggregate level ($p=0.095$, Cohen's $d=0.07$). The KG contribution is concentrated on compositional (T4: +3.7) and cross-domain (T6: +3.1) tiers.
+  \item On Track~A (582 cases, 212 tools), the improvement over BM25, while statistically significant ($p=0.045$), has a negligible effect size (Cohen's $d=0.08$). The practical benefit concentrates on compositional (T4: +4.0) and cross-domain (T6: +3.0) tiers.
   \item The benchmark is specific to creative design tools. Generalization to other MCP domains (databases, DevOps, scientific computing) remains untested.
   \item We compare against traditional IR baselines (BM25, TF-IDF) but not against dense neural retrieval methods (e.g., sentence-BERT, E5). We chose self-contained baselines with no external model dependencies to ensure full reproducibility, but neural retrieval may outperform our approach on cross-domain queries.
   \item Synthetic tools, while KG-integrated with vocabulary-separated descriptions and shell composites, lack the full organic complexity of real tools. Real-world tool catalogs may exhibit different structural patterns.
@@ -450,7 +450,10 @@ KG-Hybrid depends on a manually curated design taxonomy that maps methods to too
 \label{sec:conclusion}
 % ============================================================================
 
-We introduced PinePaper-ToolBench, the first public benchmark for tool selection in MCP-based LLM agents, with 559 test cases across 6 complexity tiers covering 124 tools. Our evaluation yields two actionable findings for practitioners. First, BM25 over taxonomy-enriched documents is a strong baseline (Recall@5 = 0.855, 94\% token reduction), and should be the default starting point for any MCP tool selection system. Second, knowledge graph structural features---specifically method-to-tool \texttt{implements} edges---provide targeted gains that concentrate on compositional ($+3.7$) and cross-domain ($+3.1$) queries, though the aggregate improvement over BM25 is not statistically significant ($p=0.095$). Graph propagation (PPR) through structural fingerprints contributes nothing measurable. Scale validation on an extended benchmark (1,000+ cases, 500+ tools) confirms that the KG advantage grows as vocabulary overlap between user queries and tool descriptions decreases. The benchmark, all baselines, and statistical analysis code are publicly available.
+We introduced PinePaper-ToolBench, the first public benchmark for tool selection in MCP-based LLM agents, with 582 test cases across 6 complexity tiers covering 212 tools. Our evaluation yields two actionable findings for practitioners. First, BM25 over taxonomy-enriched documents is a strong baseline (Recall@5 = 0.854, 94\% token reduction), and should be the default starting point for any MCP tool selection system. Second, knowledge graph structural features---specifically method-to-tool \texttt{implements} edges---provide targeted gains that concentrate on compositional ($+4.0$) and cross-domain ($+3.0$) queries, with the aggregate improvement over BM25 reaching statistical significance ($p=0.045$, $d=0.08$). Graph propagation (PPR) through structural fingerprints contributes nothing measurable. Scale validation on an extended benchmark (1,000+ cases, 500+ tools) confirms that the KG advantage grows as vocabulary overlap between user queries and tool descriptions decreases. The benchmark, all baselines, and statistical analysis code are publicly available.
+
+\paragraph{Reproducibility and extensibility.}
+All code, benchmark data, and experiment configurations are publicly available at \url{https://github.com/pinepaper/pinepaper-tool-selection-research}. The repository includes machine-readable manifests (\texttt{data/benchmark-cases.json}, \texttt{data/taxonomy-manifest.json}, \texttt{data/mcp-tool-manifest.json}) for independent verification of all reported results. Researchers can modify the tool vocabulary, add new design categories, or plug in custom retrieval methods and re-run all experiments with a single command (\texttt{bun run run-experiments.ts --full}). All experiments are deterministic---seeded RNG, no stochastic components---and re-runs produce bit-identical results. No API keys, external models, or GPU resources are required.
 
 \paragraph{Future work.}
 We plan to (1) extend the benchmark with dense neural retrieval baselines and cross-encoder rerankers, (2) evaluate cross-domain generalization on non-design MCP servers, (3) explore a tiered retrieval strategy that routes explicit queries to BM25 and ambiguous queries to KG-Hybrid based on confidence, and (4) extend the benchmark with real user queries from production agent sessions.
@@ -464,11 +467,11 @@ We plan to (1) extend the benchmark with dense neural retrieval baselines and cr
 \section{Benchmark Statistics}
 \label{app:benchmark}
 
-PinePaper-ToolBench covers 15 design categories: shapes, styling, animations, relations, generators, filters, effects, diagrams, composition, export, acoustic, rigging, blending, masking, and camera. Each category contains tools ranging from simple single-parameter operations (e.g., \texttt{pinepaper\_add\_filter}) to complex multi-parameter tools (e.g., \texttt{pinepaper\_animate\_keyframe}).
+PinePaper-ToolBench covers 18 design categories: shapes, styling, animations, relations, generators, filters, effects, diagrams, composition, export, acoustic, rigging, blending, masking, camera, 3D, path operations, and data visualization. Each category contains tools ranging from simple single-parameter operations (e.g., \texttt{pinepaper\_add\_filter}) to complex multi-parameter tools (e.g., \texttt{pinepaper\_animate\_keyframe}).
 
-Difficulty distribution: 198 easy (40.7\%), 176 medium (36.2\%), 112 hard (23.0\%).
+Difficulty distribution: 157 easy (27.0\%), 201 medium (34.5\%), 224 hard (38.5\%).
 
-The most frequently referenced tools across all test cases are \texttt{pinepaper\_create\_item} (referenced in 42 cases), \texttt{pinepaper\_add\_filter} (35 cases), and \texttt{pinepaper\_add\_relation} (33 cases).
+The most frequently referenced tools across all test cases are \texttt{pinepaper\_create\_item} (referenced in 154 cases), \texttt{pinepaper\_animate} (88 cases), and \texttt{pinepaper\_add\_filter} (81 cases).
 
 \section{Implementation Details}
 \label{app:implementation}

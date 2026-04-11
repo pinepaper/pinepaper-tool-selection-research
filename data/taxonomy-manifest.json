@@ -1,0 +1,2585 @@
+{
+  "generated": "2026-04-10T20:19:39.427Z",
+  "summary": {
+    "totalMethods": 178,
+    "totalCategories": 18,
+    "totalCanonicalTools": 51
+  },
+  "categories": {
+    "shapes": {
+      "methodCount": 14,
+      "tools": [
+        "pinepaper_create_glossy_sphere",
+        "pinepaper_create_item"
+      ],
+      "methods": [
+        {
+          "id": "shape.circle",
+          "name": "Create Circle",
+          "mcpTool": "pinepaper_create_item",
+          "parameters": [
+            "x",
+            "y",
+            "radius",
+            "color",
+            "strokeColor",
+            "strokeWidth"
+          ]
+        },
+        {
+          "id": "shape.rectangle",
+          "name": "Create Rectangle",
+          "mcpTool": "pinepaper_create_item",
+          "parameters": [
+            "x",
+            "y",
+            "width",
+            "height",
+            "color",
+            "cornerRadius"
+          ]
+        },
+        {
+          "id": "shape.square",
+          "name": "Create Square",
+          "mcpTool": "pinepaper_create_item",
+          "parameters": [
+            "x",
+            "y",
+            "size",
+            "color"
+          ]
+        },
+        {
+          "id": "shape.triangle",
+          "name": "Create Triangle",
+          "mcpTool": "pinepaper_create_item",
+          "parameters": [
+            "x",
+            "y",
+            "radius",
+            "color",
+            "rotation"
+          ]
+        },
+        {
+          "id": "shape.polygon",
+          "name": "Create Polygon",
+          "mcpTool": "pinepaper_create_item",
+          "parameters": [
+            "x",
+            "y",
+            "radius",
+            "sides",
+            "color"
+          ]
+        },
+        {
+          "id": "shape.star",
+          "name": "Create Star",
+          "mcpTool": "pinepaper_create_item",
+          "parameters": [
+            "x",
+            "y",
+            "radius1",
+            "radius2",
+            "points",
+            "color"
+          ]
+        },
+        {
+          "id": "shape.ellipse",
+          "name": "Create Ellipse",
+          "mcpTool": "pinepaper_create_item",
+          "parameters": [
+            "x",
+            "y",
+            "width",
+            "height",
+            "color"
+          ]
+        },
+        {
+          "id": "shape.line",
+          "name": "Create Line",
+          "mcpTool": "pinepaper_create_item",
+          "parameters": [
+            "from",
+            "to",
+            "strokeColor",
+            "strokeWidth"
+          ]
+        },
+        {
+          "id": "shape.arc",
+          "name": "Create Arc",
+          "mcpTool": "pinepaper_create_item",
+          "parameters": [
+            "from",
+            "through",
+            "to",
+            "strokeColor",
+            "strokeWidth"
+          ]
+        },
+        {
+          "id": "shape.path",
+          "name": "Create Path",
+          "mcpTool": "pinepaper_create_item",
+          "parameters": [
+            "segments",
+            "pathData",
+            "closed",
+            "color",
+            "strokeColor"
+          ]
+        },
+        {
+          "id": "shape.text",
+          "name": "Create Text",
+          "mcpTool": "pinepaper_create_item",
+          "parameters": [
+            "content",
+            "x",
+            "y",
+            "fontSize",
+            "fontFamily",
+            "color",
+            "justification"
+          ]
+        },
+        {
+          "id": "shape.glossy_sphere",
+          "name": "Create Glossy Sphere",
+          "mcpTool": "pinepaper_create_glossy_sphere",
+          "parameters": [
+            "x",
+            "y",
+            "radius",
+            "color",
+            "lightDirection",
+            "glossiness",
+            "castShadow"
+          ]
+        },
+        {
+          "id": "shape.grid",
+          "name": "Create Grid Shape",
+          "mcpTool": "pinepaper_create_item",
+          "parameters": [
+            "cols",
+            "rows",
+            "strokeColor",
+            "strokeWidth"
+          ]
+        },
+        {
+          "id": "shape.diagonal_stripes",
+          "name": "Create Diagonal Stripes",
+          "mcpTool": "pinepaper_create_item",
+          "parameters": [
+            "color1",
+            "color2",
+            "stripeWidth",
+            "angle"
+          ]
+        }
+      ]
+    },
+    "styling": {
+      "methodCount": 10,
+      "tools": [
+        "pinepaper_modify_item"
+      ],
+      "methods": [
+        {
+          "id": "styling.solid_color",
+          "name": "Solid Color Fill",
+          "mcpTool": "pinepaper_modify_item",
+          "parameters": [
+            "item",
+            "color"
+          ]
+        },
+        {
+          "id": "styling.linear_gradient",
+          "name": "Linear Gradient Fill",
+          "mcpTool": "pinepaper_modify_item",
+          "parameters": [
+            "item",
+            "stops",
+            "from",
+            "to"
+          ]
+        },
+        {
+          "id": "styling.radial_gradient",
+          "name": "Radial Gradient Fill",
+          "mcpTool": "pinepaper_modify_item",
+          "parameters": [
+            "item",
+            "stops",
+            "center",
+            "radius"
+          ]
+        },
+        {
+          "id": "styling.stroke_color",
+          "name": "Stroke Color",
+          "mcpTool": "pinepaper_modify_item",
+          "parameters": [
+            "item",
+            "strokeColor"
+          ]
+        },
+        {
+          "id": "styling.stroke_width",
+          "name": "Stroke Width",
+          "mcpTool": "pinepaper_modify_item",
+          "parameters": [
+            "item",
+            "strokeWidth"
+          ]
+        },
+        {
+          "id": "styling.stroke_cap",
+          "name": "Stroke Cap Style",
+          "mcpTool": "pinepaper_modify_item",
+          "parameters": [
+            "item",
+            "strokeCap"
+          ]
+        },
+        {
+          "id": "styling.dash_pattern",
+          "name": "Dash Pattern",
+          "mcpTool": "pinepaper_modify_item",
+          "parameters": [
+            "item",
+            "dashArray"
+          ]
+        },
+        {
+          "id": "styling.shadow",
+          "name": "Drop Shadow",
+          "mcpTool": "pinepaper_modify_item",
+          "parameters": [
+            "item",
+            "shadowColor",
+            "shadowBlur",
+            "shadowOffset"
+          ]
+        },
+        {
+          "id": "styling.opacity",
+          "name": "Set Opacity",
+          "mcpTool": "pinepaper_modify_item",
+          "parameters": [
+            "item",
+            "opacity"
+          ]
+        },
+        {
+          "id": "styling.blend_mode",
+          "name": "Blend Mode",
+          "mcpTool": "pinepaper_modify_item",
+          "parameters": [
+            "item",
+            "blendMode"
+          ]
+        }
+      ]
+    },
+    "animations": {
+      "methodCount": 13,
+      "tools": [
+        "pinepaper_animate",
+        "pinepaper_animate_keyframe",
+        "pinepaper_timeline"
+      ],
+      "methods": [
+        {
+          "id": "animation.pulse",
+          "name": "Pulse Animation",
+          "mcpTool": "pinepaper_animate",
+          "parameters": [
+            "item",
+            "speed"
+          ]
+        },
+        {
+          "id": "animation.rotate",
+          "name": "Rotate Animation",
+          "mcpTool": "pinepaper_animate",
+          "parameters": [
+            "item",
+            "speed"
+          ]
+        },
+        {
+          "id": "animation.bounce",
+          "name": "Bounce Animation",
+          "mcpTool": "pinepaper_animate",
+          "parameters": [
+            "item",
+            "speed"
+          ]
+        },
+        {
+          "id": "animation.fade",
+          "name": "Fade Animation",
+          "mcpTool": "pinepaper_animate",
+          "parameters": [
+            "item",
+            "speed"
+          ]
+        },
+        {
+          "id": "animation.wobble",
+          "name": "Wobble Animation",
+          "mcpTool": "pinepaper_animate",
+          "parameters": [
+            "item",
+            "speed"
+          ]
+        },
+        {
+          "id": "animation.typewriter",
+          "name": "Typewriter Animation",
+          "mcpTool": "pinepaper_animate",
+          "parameters": [
+            "item",
+            "speed"
+          ]
+        },
+        {
+          "id": "animation.shake",
+          "name": "Shake Animation",
+          "mcpTool": "pinepaper_animate",
+          "parameters": [
+            "item",
+            "speed"
+          ]
+        },
+        {
+          "id": "animation.swing",
+          "name": "Swing Animation",
+          "mcpTool": "pinepaper_animate",
+          "parameters": [
+            "item",
+            "speed"
+          ]
+        },
+        {
+          "id": "animation.jelly",
+          "name": "Jelly Animation",
+          "mcpTool": "pinepaper_animate",
+          "parameters": [
+            "item",
+            "speed"
+          ]
+        },
+        {
+          "id": "animation.slide",
+          "name": "Slide Animation",
+          "mcpTool": "pinepaper_animate",
+          "parameters": [
+            "item",
+            "direction",
+            "speed"
+          ]
+        },
+        {
+          "id": "animation.keyframe",
+          "name": "Keyframe Animation",
+          "mcpTool": "pinepaper_animate_keyframe",
+          "parameters": [
+            "item",
+            "keyframes",
+            "duration",
+            "easing",
+            "loop"
+          ]
+        },
+        {
+          "id": "animation.timeline_play",
+          "name": "Timeline Play",
+          "mcpTool": "pinepaper_timeline",
+          "parameters": [
+            "action",
+            "time",
+            "speed"
+          ]
+        },
+        {
+          "id": "animation.easing",
+          "name": "Set Easing Function",
+          "mcpTool": "pinepaper_animate",
+          "parameters": [
+            "item",
+            "easing"
+          ]
+        }
+      ]
+    },
+    "relations": {
+      "methodCount": 16,
+      "tools": [
+        "pinepaper_add_relation"
+      ],
+      "methods": [
+        {
+          "id": "relation.orbits",
+          "name": "Orbits Relation",
+          "mcpTool": "pinepaper_add_relation",
+          "parameters": [
+            "item",
+            "target",
+            "radius",
+            "speed",
+            "angle"
+          ]
+        },
+        {
+          "id": "relation.follows",
+          "name": "Follows Relation",
+          "mcpTool": "pinepaper_add_relation",
+          "parameters": [
+            "item",
+            "path",
+            "speed",
+            "easing",
+            "loop"
+          ]
+        },
+        {
+          "id": "relation.attached_to",
+          "name": "Attached To Relation",
+          "mcpTool": "pinepaper_add_relation",
+          "parameters": [
+            "item",
+            "target",
+            "offset"
+          ]
+        },
+        {
+          "id": "relation.points_at",
+          "name": "Points At Relation",
+          "mcpTool": "pinepaper_add_relation",
+          "parameters": [
+            "item",
+            "target"
+          ]
+        },
+        {
+          "id": "relation.mirrors",
+          "name": "Mirrors Relation",
+          "mcpTool": "pinepaper_add_relation",
+          "parameters": [
+            "item",
+            "target"
+          ]
+        },
+        {
+          "id": "relation.maintains_distance",
+          "name": "Maintains Distance Relation",
+          "mcpTool": "pinepaper_add_relation",
+          "parameters": [
+            "item",
+            "target",
+            "distance"
+          ]
+        },
+        {
+          "id": "relation.bounds_to",
+          "name": "Bounds To Relation",
+          "mcpTool": "pinepaper_add_relation",
+          "parameters": [
+            "item",
+            "target",
+            "padding"
+          ]
+        },
+        {
+          "id": "relation.triggers_on",
+          "name": "Triggers On Relation",
+          "mcpTool": "pinepaper_add_relation",
+          "parameters": [
+            "item",
+            "target",
+            "event",
+            "action"
+          ]
+        },
+        {
+          "id": "relation.synced_animation",
+          "name": "Synced Animation Relation",
+          "mcpTool": "pinepaper_add_relation",
+          "parameters": [
+            "item",
+            "target",
+            "offset"
+          ]
+        },
+        {
+          "id": "relation.driven_by",
+          "name": "Driven By Relation",
+          "mcpTool": "pinepaper_add_relation",
+          "parameters": [
+            "sourceProperty",
+            "targetProperty",
+            "multiplier",
+            "offset"
+          ]
+        },
+        {
+          "id": "relation.wiggle",
+          "name": "Wiggle Relation",
+          "mcpTool": "pinepaper_add_relation",
+          "parameters": [
+            "frequency",
+            "amplitude",
+            "property",
+            "seed"
+          ]
+        },
+        {
+          "id": "relation.time_expression",
+          "name": "Time Expression Relation",
+          "mcpTool": "pinepaper_add_relation",
+          "parameters": [
+            "property",
+            "expression",
+            "baseValue"
+          ]
+        },
+        {
+          "id": "relation.spring_follow",
+          "name": "Spring Follow Relation",
+          "mcpTool": "pinepaper_add_relation",
+          "parameters": [
+            "stiffness",
+            "damping",
+            "mass"
+          ]
+        },
+        {
+          "id": "relation.camera_animates",
+          "name": "Camera Animates Relation",
+          "mcpTool": "pinepaper_add_relation",
+          "parameters": [
+            "duration",
+            "loop",
+            "keyframes"
+          ]
+        },
+        {
+          "id": "relation.blend_reacts_to",
+          "name": "Blend Reacts To Relation",
+          "mcpTool": "pinepaper_add_relation",
+          "parameters": [
+            "proximityRadius",
+            "activeMode",
+            "inactiveMode"
+          ]
+        },
+        {
+          "id": "relation.blend_transition",
+          "name": "Blend Transition Relation",
+          "mcpTool": "pinepaper_add_relation",
+          "parameters": [
+            "modes",
+            "opacities",
+            "cycleDuration"
+          ]
+        }
+      ]
+    },
+    "generators": {
+      "methodCount": 8,
+      "tools": [
+        "pinepaper_create_grid",
+        "pinepaper_execute_generator"
+      ],
+      "methods": [
+        {
+          "id": "generator.sunburst",
+          "name": "Sunburst Generator",
+          "mcpTool": "pinepaper_execute_generator",
+          "parameters": [
+            "rays",
+            "color1",
+            "color2"
+          ]
+        },
+        {
+          "id": "generator.waves",
+          "name": "Waves Generator",
+          "mcpTool": "pinepaper_execute_generator",
+          "parameters": [
+            "layers",
+            "colors",
+            "animated"
+          ]
+        },
+        {
+          "id": "generator.grid",
+          "name": "Grid Generator",
+          "mcpTool": "pinepaper_create_grid",
+          "parameters": [
+            "cols",
+            "rows",
+            "strokeColor",
+            "strokeWidth",
+            "animated"
+          ]
+        },
+        {
+          "id": "generator.circuit",
+          "name": "Circuit Generator",
+          "mcpTool": "pinepaper_execute_generator",
+          "parameters": [
+            "color",
+            "animated"
+          ]
+        },
+        {
+          "id": "generator.sunset_scene",
+          "name": "Sunset Scene Generator",
+          "mcpTool": "pinepaper_execute_generator",
+          "parameters": [
+            "sunColor",
+            "skyColors",
+            "animated"
+          ]
+        },
+        {
+          "id": "generator.stars",
+          "name": "Stars Generator",
+          "mcpTool": "pinepaper_execute_generator",
+          "parameters": [
+            "count",
+            "color",
+            "animated"
+          ]
+        },
+        {
+          "id": "generator.stacked_circles",
+          "name": "Stacked Circles Generator",
+          "mcpTool": "pinepaper_execute_generator",
+          "parameters": [
+            "count",
+            "colors",
+            "style"
+          ]
+        },
+        {
+          "id": "generator.pattern",
+          "name": "Pattern Generator",
+          "mcpTool": "pinepaper_execute_generator",
+          "parameters": [
+            "element",
+            "spacing",
+            "color",
+            "size"
+          ]
+        }
+      ]
+    },
+    "filters": {
+      "methodCount": 16,
+      "tools": [
+        "pinepaper_add_filter"
+      ],
+      "methods": [
+        {
+          "id": "filter.grayscale",
+          "name": "Grayscale Filter",
+          "mcpTool": "pinepaper_add_filter",
+          "parameters": [
+            "intensity"
+          ]
+        },
+        {
+          "id": "filter.blur",
+          "name": "Blur Filter",
+          "mcpTool": "pinepaper_add_filter",
+          "parameters": [
+            "radius"
+          ]
+        },
+        {
+          "id": "filter.sepia",
+          "name": "Sepia Filter",
+          "mcpTool": "pinepaper_add_filter",
+          "parameters": [
+            "intensity"
+          ]
+        },
+        {
+          "id": "filter.invert",
+          "name": "Invert Filter",
+          "mcpTool": "pinepaper_add_filter",
+          "parameters": [
+            "intensity"
+          ]
+        },
+        {
+          "id": "filter.posterize",
+          "name": "Posterize Filter",
+          "mcpTool": "pinepaper_add_filter",
+          "parameters": [
+            "levels"
+          ]
+        },
+        {
+          "id": "filter.hue_shift",
+          "name": "Hue Shift Filter",
+          "mcpTool": "pinepaper_add_filter",
+          "parameters": [
+            "degrees"
+          ]
+        },
+        {
+          "id": "filter.brightness",
+          "name": "Brightness Filter",
+          "mcpTool": "pinepaper_add_filter",
+          "parameters": [
+            "value"
+          ]
+        },
+        {
+          "id": "filter.contrast",
+          "name": "Contrast Filter",
+          "mcpTool": "pinepaper_add_filter",
+          "parameters": [
+            "value"
+          ]
+        },
+        {
+          "id": "filter.saturation",
+          "name": "Saturation Filter",
+          "mcpTool": "pinepaper_add_filter",
+          "parameters": [
+            "value"
+          ]
+        },
+        {
+          "id": "filter.zoom_blur",
+          "name": "Zoom Blur Filter",
+          "mcpTool": "pinepaper_add_filter",
+          "parameters": [
+            "strength",
+            "center"
+          ]
+        },
+        {
+          "id": "filter.motion_blur",
+          "name": "Motion Blur Filter",
+          "mcpTool": "pinepaper_add_filter",
+          "parameters": [
+            "angle",
+            "strength"
+          ]
+        },
+        {
+          "id": "filter.gaussian_blur",
+          "name": "Gaussian Blur Filter",
+          "mcpTool": "pinepaper_add_filter",
+          "parameters": [
+            "radius"
+          ]
+        },
+        {
+          "id": "filter.oil_paint",
+          "name": "Oil Paint Filter",
+          "mcpTool": "pinepaper_add_filter",
+          "parameters": [
+            "brushSize",
+            "intensity"
+          ]
+        },
+        {
+          "id": "filter.sketch",
+          "name": "Sketch Filter",
+          "mcpTool": "pinepaper_add_filter",
+          "parameters": [
+            "lineWeight",
+            "intensity"
+          ]
+        },
+        {
+          "id": "filter.watercolor",
+          "name": "Watercolor Filter",
+          "mcpTool": "pinepaper_add_filter",
+          "parameters": [
+            "wetness",
+            "intensity"
+          ]
+        },
+        {
+          "id": "filter.pixelate",
+          "name": "Pixelate Filter",
+          "mcpTool": "pinepaper_add_filter",
+          "parameters": [
+            "blockSize"
+          ]
+        }
+      ]
+    },
+    "effects": {
+      "methodCount": 2,
+      "tools": [
+        "pinepaper_add_effect"
+      ],
+      "methods": [
+        {
+          "id": "effect.sparkle",
+          "name": "Sparkle Effect",
+          "mcpTool": "pinepaper_add_effect",
+          "parameters": [
+            "item",
+            "color",
+            "count",
+            "speed"
+          ]
+        },
+        {
+          "id": "effect.blast",
+          "name": "Blast Effect",
+          "mcpTool": "pinepaper_add_effect",
+          "parameters": [
+            "x",
+            "y",
+            "color",
+            "radius",
+            "particles"
+          ]
+        }
+      ]
+    },
+    "diagrams": {
+      "methodCount": 18,
+      "tools": [
+        "pinepaper_auto_layout",
+        "pinepaper_connect",
+        "pinepaper_create_diagram_shape"
+      ],
+      "methods": [
+        {
+          "id": "diagram.flowchart_process",
+          "name": "Create Process Shape",
+          "mcpTool": "pinepaper_create_diagram_shape",
+          "parameters": [
+            "x",
+            "y",
+            "label",
+            "color"
+          ]
+        },
+        {
+          "id": "diagram.flowchart_decision",
+          "name": "Create Decision Shape",
+          "mcpTool": "pinepaper_create_diagram_shape",
+          "parameters": [
+            "x",
+            "y",
+            "label",
+            "color"
+          ]
+        },
+        {
+          "id": "diagram.connect",
+          "name": "Connect Shapes",
+          "mcpTool": "pinepaper_connect",
+          "parameters": [
+            "from",
+            "to",
+            "label",
+            "style"
+          ]
+        },
+        {
+          "id": "diagram.auto_layout",
+          "name": "Auto Layout",
+          "mcpTool": "pinepaper_auto_layout",
+          "parameters": [
+            "type",
+            "spacing"
+          ]
+        },
+        {
+          "id": "diagram.flowchart_terminal",
+          "name": "Create Terminal Shape",
+          "mcpTool": "pinepaper_create_diagram_shape",
+          "parameters": [
+            "x",
+            "y",
+            "label",
+            "color"
+          ]
+        },
+        {
+          "id": "diagram.flowchart_data",
+          "name": "Create Data Shape",
+          "mcpTool": "pinepaper_create_diagram_shape",
+          "parameters": [
+            "x",
+            "y",
+            "label",
+            "color"
+          ]
+        },
+        {
+          "id": "diagram.flowchart_document",
+          "name": "Create Document Shape",
+          "mcpTool": "pinepaper_create_diagram_shape",
+          "parameters": [
+            "x",
+            "y",
+            "label",
+            "color"
+          ]
+        },
+        {
+          "id": "diagram.flowchart_database",
+          "name": "Create Database Shape",
+          "mcpTool": "pinepaper_create_diagram_shape",
+          "parameters": [
+            "x",
+            "y",
+            "label",
+            "color"
+          ]
+        },
+        {
+          "id": "diagram.uml_class",
+          "name": "Create UML Class",
+          "mcpTool": "pinepaper_create_diagram_shape",
+          "parameters": [
+            "x",
+            "y",
+            "name",
+            "attributes",
+            "methods"
+          ]
+        },
+        {
+          "id": "diagram.uml_use_case",
+          "name": "Create UML Use Case",
+          "mcpTool": "pinepaper_create_diagram_shape",
+          "parameters": [
+            "x",
+            "y",
+            "label"
+          ]
+        },
+        {
+          "id": "diagram.uml_actor",
+          "name": "Create UML Actor",
+          "mcpTool": "pinepaper_create_diagram_shape",
+          "parameters": [
+            "x",
+            "y",
+            "label"
+          ]
+        },
+        {
+          "id": "diagram.network_cloud",
+          "name": "Create Network Cloud",
+          "mcpTool": "pinepaper_create_diagram_shape",
+          "parameters": [
+            "x",
+            "y",
+            "label",
+            "color"
+          ]
+        },
+        {
+          "id": "diagram.network_server",
+          "name": "Create Network Server",
+          "mcpTool": "pinepaper_create_diagram_shape",
+          "parameters": [
+            "x",
+            "y",
+            "label",
+            "color"
+          ]
+        },
+        {
+          "id": "diagram.connect_ports",
+          "name": "Connect with Ports",
+          "mcpTool": "pinepaper_connect",
+          "parameters": [
+            "from",
+            "fromPort",
+            "to",
+            "toPort",
+            "label"
+          ]
+        },
+        {
+          "id": "diagram.layout_hierarchical",
+          "name": "Hierarchical Layout",
+          "mcpTool": "pinepaper_auto_layout",
+          "parameters": [
+            "spacing",
+            "direction"
+          ]
+        },
+        {
+          "id": "diagram.layout_force",
+          "name": "Force-Directed Layout",
+          "mcpTool": "pinepaper_auto_layout",
+          "parameters": [
+            "repulsion",
+            "attraction"
+          ]
+        },
+        {
+          "id": "diagram.layout_tree",
+          "name": "Tree Layout",
+          "mcpTool": "pinepaper_auto_layout",
+          "parameters": [
+            "root",
+            "spacing"
+          ]
+        },
+        {
+          "id": "diagram.layout_radial",
+          "name": "Radial Layout",
+          "mcpTool": "pinepaper_auto_layout",
+          "parameters": [
+            "center",
+            "radius"
+          ]
+        }
+      ]
+    },
+    "composition": {
+      "methodCount": 7,
+      "tools": [
+        "pinepaper_batch_create",
+        "pinepaper_batch_modify",
+        "pinepaper_group",
+        "pinepaper_scene",
+        "pinepaper_ungroup"
+      ],
+      "methods": [
+        {
+          "id": "composition.batch_create",
+          "name": "Batch Create",
+          "mcpTool": "pinepaper_batch_create",
+          "parameters": [
+            "items"
+          ]
+        },
+        {
+          "id": "composition.batch_modify",
+          "name": "Batch Modify",
+          "mcpTool": "pinepaper_batch_modify",
+          "parameters": [
+            "modifications"
+          ]
+        },
+        {
+          "id": "composition.group",
+          "name": "Group Items",
+          "mcpTool": "pinepaper_group",
+          "parameters": [
+            "items",
+            "name"
+          ]
+        },
+        {
+          "id": "composition.ungroup",
+          "name": "Ungroup Items",
+          "mcpTool": "pinepaper_ungroup",
+          "parameters": [
+            "group"
+          ]
+        },
+        {
+          "id": "composition.create_scene",
+          "name": "Create Scene",
+          "mcpTool": "pinepaper_scene",
+          "parameters": [
+            "name"
+          ]
+        },
+        {
+          "id": "composition.save_scene",
+          "name": "Save Scene",
+          "mcpTool": "pinepaper_scene",
+          "parameters": [
+            "name"
+          ]
+        },
+        {
+          "id": "composition.load_scene",
+          "name": "Load Scene",
+          "mcpTool": "pinepaper_scene",
+          "parameters": [
+            "name",
+            "transition"
+          ]
+        }
+      ]
+    },
+    "export": {
+      "methodCount": 8,
+      "tools": [
+        "pinepaper_export"
+      ],
+      "methods": [
+        {
+          "id": "export.webm",
+          "name": "Export WebM Video",
+          "mcpTool": "pinepaper_export",
+          "parameters": [
+            "duration",
+            "fps",
+            "quality"
+          ]
+        },
+        {
+          "id": "export.mp4",
+          "name": "Export MP4 Video",
+          "mcpTool": "pinepaper_export",
+          "parameters": [
+            "duration",
+            "fps",
+            "quality"
+          ]
+        },
+        {
+          "id": "export.gif",
+          "name": "Export GIF",
+          "mcpTool": "pinepaper_export",
+          "parameters": [
+            "duration",
+            "fps",
+            "loop"
+          ]
+        },
+        {
+          "id": "export.png",
+          "name": "Export PNG Image",
+          "mcpTool": "pinepaper_export",
+          "parameters": [
+            "scale",
+            "transparent"
+          ]
+        },
+        {
+          "id": "export.png_hd",
+          "name": "Export HD PNG",
+          "mcpTool": "pinepaper_export",
+          "parameters": [
+            "transparent"
+          ]
+        },
+        {
+          "id": "export.pdf",
+          "name": "Export PDF",
+          "mcpTool": "pinepaper_export",
+          "parameters": [
+            "pageSize"
+          ]
+        },
+        {
+          "id": "export.svg",
+          "name": "Export SVG",
+          "mcpTool": "pinepaper_export",
+          "parameters": [
+            "includeAnimations"
+          ]
+        },
+        {
+          "id": "export.svg_animated",
+          "name": "Export Animated SVG",
+          "mcpTool": "pinepaper_export",
+          "parameters": [
+            "animationFormat"
+          ]
+        }
+      ]
+    },
+    "acoustic": {
+      "methodCount": 4,
+      "tools": [
+        "pinepaper_audio_envelope",
+        "pinepaper_audio_oscillator",
+        "pinepaper_audio_pan",
+        "pinepaper_audio_trigger"
+      ],
+      "methods": [
+        {
+          "id": "acoustic.sine_oscillator",
+          "name": "Sine Oscillator",
+          "mcpTool": "pinepaper_audio_oscillator",
+          "parameters": [
+            "frequency",
+            "volume",
+            "pan"
+          ]
+        },
+        {
+          "id": "acoustic.adsr",
+          "name": "ADSR Envelope",
+          "mcpTool": "pinepaper_audio_envelope",
+          "parameters": [
+            "attack",
+            "decay",
+            "sustain",
+            "release"
+          ]
+        },
+        {
+          "id": "acoustic.stereo_pan",
+          "name": "Stereo Pan",
+          "mcpTool": "pinepaper_audio_pan",
+          "parameters": [
+            "pan"
+          ]
+        },
+        {
+          "id": "acoustic.node_activate",
+          "name": "Node Activate",
+          "mcpTool": "pinepaper_audio_trigger",
+          "parameters": [
+            "node_id",
+            "trigger_mode"
+          ]
+        }
+      ]
+    },
+    "rigging": {
+      "methodCount": 13,
+      "tools": [
+        "pinepaper_add_bone",
+        "pinepaper_apply_rig_preset",
+        "pinepaper_attach_item_to_bone",
+        "pinepaper_create_skeleton",
+        "pinepaper_interpolate_poses",
+        "pinepaper_load_pose",
+        "pinepaper_save_pose"
+      ],
+      "methods": [
+        {
+          "id": "rigging.create_skeleton",
+          "name": "Create Skeleton",
+          "mcpTool": "pinepaper_create_skeleton",
+          "parameters": [
+            "name",
+            "x",
+            "y"
+          ]
+        },
+        {
+          "id": "rigging.add_bone",
+          "name": "Add Bone",
+          "mcpTool": "pinepaper_add_bone",
+          "parameters": [
+            "skeletonId",
+            "name",
+            "parentBoneId",
+            "length",
+            "angle"
+          ]
+        },
+        {
+          "id": "rigging.attach_item",
+          "name": "Attach Item to Bone",
+          "mcpTool": "pinepaper_attach_item_to_bone",
+          "parameters": [
+            "skeletonId",
+            "boneId",
+            "itemId",
+            "attachPoint"
+          ]
+        },
+        {
+          "id": "rigging.apply_preset",
+          "name": "Apply Rig Preset",
+          "mcpTool": "pinepaper_apply_rig_preset",
+          "parameters": [
+            "preset"
+          ]
+        },
+        {
+          "id": "rigging.save_pose",
+          "name": "Save Pose",
+          "mcpTool": "pinepaper_save_pose",
+          "parameters": [
+            "skeletonId",
+            "poseName"
+          ]
+        },
+        {
+          "id": "rigging.load_pose",
+          "name": "Load Pose",
+          "mcpTool": "pinepaper_load_pose",
+          "parameters": [
+            "poseId"
+          ]
+        },
+        {
+          "id": "rigging.interpolate_poses",
+          "name": "Interpolate Poses",
+          "mcpTool": "pinepaper_interpolate_poses",
+          "parameters": [
+            "poseA",
+            "poseB",
+            "factor"
+          ]
+        },
+        {
+          "id": "rigging.create_ik_chain",
+          "name": "Create IK Chain",
+          "mcpTool": "pinepaper_create_skeleton",
+          "parameters": [
+            "skeletonId",
+            "boneIds",
+            "solverType",
+            "strength"
+          ]
+        },
+        {
+          "id": "rigging.skin_path",
+          "name": "Skin Path",
+          "mcpTool": "pinepaper_create_skeleton",
+          "parameters": [
+            "skeletonId",
+            "itemId",
+            "maxInfluences"
+          ]
+        },
+        {
+          "id": "rigging.auto_skin",
+          "name": "Auto Skin",
+          "mcpTool": "pinepaper_create_skeleton",
+          "parameters": [
+            "skeletonId"
+          ]
+        },
+        {
+          "id": "rigging.auto_breath",
+          "name": "Auto Breath",
+          "mcpTool": "pinepaper_create_skeleton",
+          "parameters": [
+            "skeletonId",
+            "speed"
+          ]
+        },
+        {
+          "id": "rigging.auto_walk",
+          "name": "Auto Walk",
+          "mcpTool": "pinepaper_create_skeleton",
+          "parameters": [
+            "skeletonId",
+            "speed"
+          ]
+        },
+        {
+          "id": "rigging.auto_jump",
+          "name": "Auto Jump",
+          "mcpTool": "pinepaper_create_skeleton",
+          "parameters": [
+            "skeletonId",
+            "height"
+          ]
+        }
+      ]
+    },
+    "blending": {
+      "methodCount": 5,
+      "tools": [
+        "pinepaper_add_interactive_blend",
+        "pinepaper_apply_blend_preset",
+        "pinepaper_set_group_blend_mode",
+        "pinepaper_transition_blend_mode"
+      ],
+      "methods": [
+        {
+          "id": "blending.apply_preset",
+          "name": "Apply Blend Preset",
+          "mcpTool": "pinepaper_apply_blend_preset",
+          "parameters": [
+            "itemId",
+            "preset"
+          ]
+        },
+        {
+          "id": "blending.remove_preset",
+          "name": "Remove Blend Preset",
+          "mcpTool": "pinepaper_apply_blend_preset",
+          "parameters": [
+            "itemId"
+          ]
+        },
+        {
+          "id": "blending.transition",
+          "name": "Blend Mode Transition",
+          "mcpTool": "pinepaper_transition_blend_mode",
+          "parameters": [
+            "itemId",
+            "targetMode",
+            "duration",
+            "targetOpacity"
+          ]
+        },
+        {
+          "id": "blending.add_interactive",
+          "name": "Add Interactive Blend",
+          "mcpTool": "pinepaper_add_interactive_blend",
+          "parameters": [
+            "itemId",
+            "event",
+            "modes"
+          ]
+        },
+        {
+          "id": "blending.set_group_blend",
+          "name": "Set Group Blend Mode",
+          "mcpTool": "pinepaper_set_group_blend_mode",
+          "parameters": [
+            "groupId",
+            "mode",
+            "opacity"
+          ]
+        }
+      ]
+    },
+    "masking": {
+      "methodCount": 5,
+      "tools": [
+        "pinepaper_create_item"
+      ],
+      "methods": [
+        {
+          "id": "masking.apply_mask",
+          "name": "Apply Mask",
+          "mcpTool": "pinepaper_create_item",
+          "parameters": [
+            "item",
+            "maskType",
+            "maskMode"
+          ]
+        },
+        {
+          "id": "masking.remove_mask",
+          "name": "Remove Mask",
+          "mcpTool": "pinepaper_create_item",
+          "parameters": [
+            "item"
+          ]
+        },
+        {
+          "id": "masking.apply_animated_mask",
+          "name": "Apply Animated Mask",
+          "mcpTool": "pinepaper_create_item",
+          "parameters": [
+            "item",
+            "preset",
+            "duration",
+            "easing"
+          ]
+        },
+        {
+          "id": "masking.apply_custom_mask",
+          "name": "Apply Custom Mask",
+          "mcpTool": "pinepaper_create_item",
+          "parameters": [
+            "item",
+            "maskType",
+            "keyframes",
+            "duration"
+          ]
+        },
+        {
+          "id": "masking.add_mask_layer",
+          "name": "Add Mask Layer",
+          "mcpTool": "pinepaper_create_item",
+          "parameters": [
+            "maskedItem",
+            "maskType",
+            "maskMode"
+          ]
+        }
+      ]
+    },
+    "camera": {
+      "methodCount": 4,
+      "tools": [
+        "pinepaper_create_item"
+      ],
+      "methods": [
+        {
+          "id": "camera.zoom_in",
+          "name": "Camera Zoom In",
+          "mcpTool": "pinepaper_create_item",
+          "parameters": [
+            "zoom",
+            "duration"
+          ]
+        },
+        {
+          "id": "camera.zoom_out",
+          "name": "Camera Zoom Out",
+          "mcpTool": "pinepaper_create_item",
+          "parameters": [
+            "zoom",
+            "duration"
+          ]
+        },
+        {
+          "id": "camera.pan_to",
+          "name": "Camera Pan To",
+          "mcpTool": "pinepaper_create_item",
+          "parameters": [
+            "x",
+            "y",
+            "duration"
+          ]
+        },
+        {
+          "id": "camera.reset",
+          "name": "Camera Reset",
+          "mcpTool": "pinepaper_create_item",
+          "parameters": [
+            "duration"
+          ]
+        }
+      ]
+    },
+    "path_operations": {
+      "methodCount": 13,
+      "tools": [
+        "pinepaper_path_boolean",
+        "pinepaper_path_flatten",
+        "pinepaper_path_interpolate",
+        "pinepaper_path_intersections",
+        "pinepaper_path_offset",
+        "pinepaper_path_point_at",
+        "pinepaper_path_reverse",
+        "pinepaper_path_simplify",
+        "pinepaper_path_smooth"
+      ],
+      "methods": [
+        {
+          "id": "pathops.unite",
+          "name": "Unite Paths",
+          "mcpTool": "pinepaper_path_boolean",
+          "parameters": [
+            "paths",
+            "keepOriginals"
+          ]
+        },
+        {
+          "id": "pathops.subtract",
+          "name": "Subtract Paths",
+          "mcpTool": "pinepaper_path_boolean",
+          "parameters": [
+            "basePath",
+            "subtractPaths",
+            "keepOriginals"
+          ]
+        },
+        {
+          "id": "pathops.intersect",
+          "name": "Intersect Paths",
+          "mcpTool": "pinepaper_path_boolean",
+          "parameters": [
+            "paths",
+            "keepOriginals"
+          ]
+        },
+        {
+          "id": "pathops.exclude",
+          "name": "Exclude Paths (XOR)",
+          "mcpTool": "pinepaper_path_boolean",
+          "parameters": [
+            "paths",
+            "keepOriginals"
+          ]
+        },
+        {
+          "id": "pathops.divide",
+          "name": "Divide Paths",
+          "mcpTool": "pinepaper_path_boolean",
+          "parameters": [
+            "paths",
+            "keepOriginals"
+          ]
+        },
+        {
+          "id": "pathops.offset",
+          "name": "Offset Path",
+          "mcpTool": "pinepaper_path_offset",
+          "parameters": [
+            "path",
+            "distance",
+            "join",
+            "keepOriginal"
+          ]
+        },
+        {
+          "id": "pathops.simplify",
+          "name": "Simplify Path",
+          "mcpTool": "pinepaper_path_simplify",
+          "parameters": [
+            "path",
+            "tolerance"
+          ]
+        },
+        {
+          "id": "pathops.flatten",
+          "name": "Flatten Path",
+          "mcpTool": "pinepaper_path_flatten",
+          "parameters": [
+            "path",
+            "tolerance"
+          ]
+        },
+        {
+          "id": "pathops.smooth",
+          "name": "Smooth Path",
+          "mcpTool": "pinepaper_path_smooth",
+          "parameters": [
+            "path",
+            "type",
+            "factor"
+          ]
+        },
+        {
+          "id": "pathops.reverse",
+          "name": "Reverse Path",
+          "mcpTool": "pinepaper_path_reverse",
+          "parameters": [
+            "path"
+          ]
+        },
+        {
+          "id": "pathops.interpolate",
+          "name": "Interpolate Paths",
+          "mcpTool": "pinepaper_path_interpolate",
+          "parameters": [
+            "pathA",
+            "pathB",
+            "factor"
+          ]
+        },
+        {
+          "id": "pathops.get_intersections",
+          "name": "Get Path Intersections",
+          "mcpTool": "pinepaper_path_intersections",
+          "parameters": [
+            "pathA",
+            "pathB"
+          ]
+        },
+        {
+          "id": "pathops.get_point_at",
+          "name": "Sample Point on Path",
+          "mcpTool": "pinepaper_path_point_at",
+          "parameters": [
+            "path",
+            "offset"
+          ]
+        }
+      ]
+    },
+    "3d": {
+      "methodCount": 13,
+      "tools": [
+        "pinepaper_animate_3d",
+        "pinepaper_create_3d_object",
+        "pinepaper_extrude_path",
+        "pinepaper_set_3d_camera",
+        "pinepaper_set_3d_projection",
+        "pinepaper_transform_3d"
+      ],
+      "methods": [
+        {
+          "id": "3d.cube",
+          "name": "Create 3D Cube",
+          "mcpTool": "pinepaper_create_3d_object",
+          "parameters": [
+            "x",
+            "y",
+            "z",
+            "size",
+            "color",
+            "rotationX",
+            "rotationY",
+            "rotationZ"
+          ]
+        },
+        {
+          "id": "3d.sphere",
+          "name": "Create 3D Sphere",
+          "mcpTool": "pinepaper_create_3d_object",
+          "parameters": [
+            "x",
+            "y",
+            "z",
+            "radius",
+            "color",
+            "segments",
+            "rings"
+          ]
+        },
+        {
+          "id": "3d.cylinder",
+          "name": "Create 3D Cylinder",
+          "mcpTool": "pinepaper_create_3d_object",
+          "parameters": [
+            "x",
+            "y",
+            "z",
+            "radius",
+            "height",
+            "color",
+            "segments"
+          ]
+        },
+        {
+          "id": "3d.torus",
+          "name": "Create 3D Torus",
+          "mcpTool": "pinepaper_create_3d_object",
+          "parameters": [
+            "x",
+            "y",
+            "z",
+            "majorRadius",
+            "minorRadius",
+            "color",
+            "segments",
+            "rings"
+          ]
+        },
+        {
+          "id": "3d.cone",
+          "name": "Create 3D Cone",
+          "mcpTool": "pinepaper_create_3d_object",
+          "parameters": [
+            "x",
+            "y",
+            "z",
+            "radius",
+            "height",
+            "color",
+            "segments"
+          ]
+        },
+        {
+          "id": "3d.extrude",
+          "name": "Extrude 2D Path to 3D",
+          "mcpTool": "pinepaper_extrude_path",
+          "parameters": [
+            "pathId",
+            "depth",
+            "color",
+            "capped"
+          ]
+        },
+        {
+          "id": "3d.revolve",
+          "name": "Revolve 2D Profile to 3D",
+          "mcpTool": "pinepaper_extrude_path",
+          "parameters": [
+            "pathId",
+            "axis",
+            "segments",
+            "angle",
+            "color"
+          ]
+        },
+        {
+          "id": "3d.perspective",
+          "name": "Set Perspective Projection",
+          "mcpTool": "pinepaper_set_3d_projection",
+          "parameters": [
+            "focalLength",
+            "centerX",
+            "centerY"
+          ]
+        },
+        {
+          "id": "3d.isometric",
+          "name": "Set Isometric Projection",
+          "mcpTool": "pinepaper_set_3d_projection",
+          "parameters": [
+            "scale",
+            "centerX",
+            "centerY"
+          ]
+        },
+        {
+          "id": "3d.orthographic",
+          "name": "Set Orthographic Projection",
+          "mcpTool": "pinepaper_set_3d_projection",
+          "parameters": [
+            "scale",
+            "centerX",
+            "centerY"
+          ]
+        },
+        {
+          "id": "3d.camera",
+          "name": "Set 3D Camera",
+          "mcpTool": "pinepaper_set_3d_camera",
+          "parameters": [
+            "eyeX",
+            "eyeY",
+            "eyeZ",
+            "lookAtX",
+            "lookAtY",
+            "lookAtZ"
+          ]
+        },
+        {
+          "id": "3d.transform",
+          "name": "Transform 3D Object",
+          "mcpTool": "pinepaper_transform_3d",
+          "parameters": [
+            "objectId",
+            "translateX",
+            "translateY",
+            "translateZ",
+            "rotateX",
+            "rotateY",
+            "rotateZ",
+            "scaleX",
+            "scaleY",
+            "scaleZ"
+          ]
+        },
+        {
+          "id": "3d.animate",
+          "name": "Animate 3D Object",
+          "mcpTool": "pinepaper_animate_3d",
+          "parameters": [
+            "objectId",
+            "targetX",
+            "targetY",
+            "targetZ",
+            "targetRotateX",
+            "targetRotateY",
+            "targetRotateZ",
+            "duration",
+            "easing",
+            "loop"
+          ]
+        }
+      ]
+    },
+    "data_visualization": {
+      "methodCount": 9,
+      "tools": [
+        "pinepaper_create_chart"
+      ],
+      "methods": [
+        {
+          "id": "dataviz.bar_chart",
+          "name": "Create Bar Chart",
+          "mcpTool": "pinepaper_create_chart",
+          "parameters": [
+            "type",
+            "data",
+            "xField",
+            "yField",
+            "width",
+            "height",
+            "title",
+            "colors"
+          ]
+        },
+        {
+          "id": "dataviz.line_chart",
+          "name": "Create Line Chart",
+          "mcpTool": "pinepaper_create_chart",
+          "parameters": [
+            "type",
+            "data",
+            "xField",
+            "yField",
+            "lineColor",
+            "lineWidth"
+          ]
+        },
+        {
+          "id": "dataviz.scatter_plot",
+          "name": "Create Scatter Plot",
+          "mcpTool": "pinepaper_create_chart",
+          "parameters": [
+            "type",
+            "data",
+            "xField",
+            "yField",
+            "dotRadius"
+          ]
+        },
+        {
+          "id": "dataviz.area_chart",
+          "name": "Create Area Chart",
+          "mcpTool": "pinepaper_create_chart",
+          "parameters": [
+            "type",
+            "data",
+            "xField",
+            "yField",
+            "fillColor"
+          ]
+        },
+        {
+          "id": "dataviz.histogram",
+          "name": "Create Histogram",
+          "mcpTool": "pinepaper_create_chart",
+          "parameters": [
+            "type",
+            "data",
+            "bins"
+          ]
+        },
+        {
+          "id": "dataviz.pie_chart",
+          "name": "Create Pie Chart",
+          "mcpTool": "pinepaper_create_chart",
+          "parameters": [
+            "type",
+            "data",
+            "labelField",
+            "valueField"
+          ]
+        },
+        {
+          "id": "dataviz.heatmap",
+          "name": "Create Heatmap",
+          "mcpTool": "pinepaper_create_chart",
+          "parameters": [
+            "type",
+            "data",
+            "xField",
+            "yField",
+            "valueField"
+          ]
+        },
+        {
+          "id": "dataviz.bubble_chart",
+          "name": "Create Bubble Chart",
+          "mcpTool": "pinepaper_create_chart",
+          "parameters": [
+            "type",
+            "data",
+            "xField",
+            "yField",
+            "sizeField"
+          ]
+        },
+        {
+          "id": "dataviz.stacked_bar",
+          "name": "Create Stacked Bar Chart",
+          "mcpTool": "pinepaper_create_chart",
+          "parameters": [
+            "type",
+            "data",
+            "xField",
+            "seriesFields"
+          ]
+        }
+      ]
+    }
+  },
+  "canonicalTools": {
+    "pinepaper_create_item": {
+      "methodCount": 22,
+      "methods": [
+        "shape.circle",
+        "shape.rectangle",
+        "shape.square",
+        "shape.triangle",
+        "shape.polygon",
+        "shape.star",
+        "shape.ellipse",
+        "shape.line",
+        "shape.arc",
+        "shape.path",
+        "shape.text",
+        "shape.grid",
+        "shape.diagonal_stripes",
+        "masking.apply_mask",
+        "masking.remove_mask",
+        "masking.apply_animated_mask",
+        "masking.apply_custom_mask",
+        "masking.add_mask_layer",
+        "camera.zoom_in",
+        "camera.zoom_out",
+        "camera.pan_to",
+        "camera.reset"
+      ],
+      "categories": [
+        "shapes",
+        "masking",
+        "camera"
+      ]
+    },
+    "pinepaper_create_glossy_sphere": {
+      "methodCount": 1,
+      "methods": [
+        "shape.glossy_sphere"
+      ],
+      "categories": [
+        "shapes"
+      ]
+    },
+    "pinepaper_modify_item": {
+      "methodCount": 10,
+      "methods": [
+        "styling.solid_color",
+        "styling.linear_gradient",
+        "styling.radial_gradient",
+        "styling.stroke_color",
+        "styling.stroke_width",
+        "styling.stroke_cap",
+        "styling.dash_pattern",
+        "styling.shadow",
+        "styling.opacity",
+        "styling.blend_mode"
+      ],
+      "categories": [
+        "styling"
+      ]
+    },
+    "pinepaper_animate": {
+      "methodCount": 11,
+      "methods": [
+        "animation.pulse",
+        "animation.rotate",
+        "animation.bounce",
+        "animation.fade",
+        "animation.wobble",
+        "animation.typewriter",
+        "animation.shake",
+        "animation.swing",
+        "animation.jelly",
+        "animation.slide",
+        "animation.easing"
+      ],
+      "categories": [
+        "animations"
+      ]
+    },
+    "pinepaper_animate_keyframe": {
+      "methodCount": 1,
+      "methods": [
+        "animation.keyframe"
+      ],
+      "categories": [
+        "animations"
+      ]
+    },
+    "pinepaper_timeline": {
+      "methodCount": 1,
+      "methods": [
+        "animation.timeline_play"
+      ],
+      "categories": [
+        "animations"
+      ]
+    },
+    "pinepaper_add_relation": {
+      "methodCount": 16,
+      "methods": [
+        "relation.orbits",
+        "relation.follows",
+        "relation.attached_to",
+        "relation.points_at",
+        "relation.mirrors",
+        "relation.maintains_distance",
+        "relation.bounds_to",
+        "relation.triggers_on",
+        "relation.synced_animation",
+        "relation.driven_by",
+        "relation.wiggle",
+        "relation.time_expression",
+        "relation.spring_follow",
+        "relation.camera_animates",
+        "relation.blend_reacts_to",
+        "relation.blend_transition"
+      ],
+      "categories": [
+        "relations"
+      ]
+    },
+    "pinepaper_execute_generator": {
+      "methodCount": 7,
+      "methods": [
+        "generator.sunburst",
+        "generator.waves",
+        "generator.circuit",
+        "generator.sunset_scene",
+        "generator.stars",
+        "generator.stacked_circles",
+        "generator.pattern"
+      ],
+      "categories": [
+        "generators"
+      ]
+    },
+    "pinepaper_create_grid": {
+      "methodCount": 1,
+      "methods": [
+        "generator.grid"
+      ],
+      "categories": [
+        "generators"
+      ]
+    },
+    "pinepaper_add_filter": {
+      "methodCount": 16,
+      "methods": [
+        "filter.grayscale",
+        "filter.blur",
+        "filter.sepia",
+        "filter.invert",
+        "filter.posterize",
+        "filter.hue_shift",
+        "filter.brightness",
+        "filter.contrast",
+        "filter.saturation",
+        "filter.zoom_blur",
+        "filter.motion_blur",
+        "filter.gaussian_blur",
+        "filter.oil_paint",
+        "filter.sketch",
+        "filter.watercolor",
+        "filter.pixelate"
+      ],
+      "categories": [
+        "filters"
+      ]
+    },
+    "pinepaper_add_effect": {
+      "methodCount": 2,
+      "methods": [
+        "effect.sparkle",
+        "effect.blast"
+      ],
+      "categories": [
+        "effects"
+      ]
+    },
+    "pinepaper_create_diagram_shape": {
+      "methodCount": 11,
+      "methods": [
+        "diagram.flowchart_process",
+        "diagram.flowchart_decision",
+        "diagram.flowchart_terminal",
+        "diagram.flowchart_data",
+        "diagram.flowchart_document",
+        "diagram.flowchart_database",
+        "diagram.uml_class",
+        "diagram.uml_use_case",
+        "diagram.uml_actor",
+        "diagram.network_cloud",
+        "diagram.network_server"
+      ],
+      "categories": [
+        "diagrams"
+      ]
+    },
+    "pinepaper_connect": {
+      "methodCount": 2,
+      "methods": [
+        "diagram.connect",
+        "diagram.connect_ports"
+      ],
+      "categories": [
+        "diagrams"
+      ]
+    },
+    "pinepaper_auto_layout": {
+      "methodCount": 5,
+      "methods": [
+        "diagram.auto_layout",
+        "diagram.layout_hierarchical",
+        "diagram.layout_force",
+        "diagram.layout_tree",
+        "diagram.layout_radial"
+      ],
+      "categories": [
+        "diagrams"
+      ]
+    },
+    "pinepaper_batch_create": {
+      "methodCount": 1,
+      "methods": [
+        "composition.batch_create"
+      ],
+      "categories": [
+        "composition"
+      ]
+    },
+    "pinepaper_batch_modify": {
+      "methodCount": 1,
+      "methods": [
+        "composition.batch_modify"
+      ],
+      "categories": [
+        "composition"
+      ]
+    },
+    "pinepaper_group": {
+      "methodCount": 1,
+      "methods": [
+        "composition.group"
+      ],
+      "categories": [
+        "composition"
+      ]
+    },
+    "pinepaper_ungroup": {
+      "methodCount": 1,
+      "methods": [
+        "composition.ungroup"
+      ],
+      "categories": [
+        "composition"
+      ]
+    },
+    "pinepaper_scene": {
+      "methodCount": 3,
+      "methods": [
+        "composition.create_scene",
+        "composition.save_scene",
+        "composition.load_scene"
+      ],
+      "categories": [
+        "composition"
+      ]
+    },
+    "pinepaper_export": {
+      "methodCount": 8,
+      "methods": [
+        "export.webm",
+        "export.mp4",
+        "export.gif",
+        "export.png",
+        "export.png_hd",
+        "export.pdf",
+        "export.svg",
+        "export.svg_animated"
+      ],
+      "categories": [
+        "export"
+      ]
+    },
+    "pinepaper_audio_oscillator": {
+      "methodCount": 1,
+      "methods": [
+        "acoustic.sine_oscillator"
+      ],
+      "categories": [
+        "acoustic"
+      ]
+    },
+    "pinepaper_audio_envelope": {
+      "methodCount": 1,
+      "methods": [
+        "acoustic.adsr"
+      ],
+      "categories": [
+        "acoustic"
+      ]
+    },
+    "pinepaper_audio_pan": {
+      "methodCount": 1,
+      "methods": [
+        "acoustic.stereo_pan"
+      ],
+      "categories": [
+        "acoustic"
+      ]
+    },
+    "pinepaper_audio_trigger": {
+      "methodCount": 1,
+      "methods": [
+        "acoustic.node_activate"
+      ],
+      "categories": [
+        "acoustic"
+      ]
+    },
+    "pinepaper_create_skeleton": {
+      "methodCount": 7,
+      "methods": [
+        "rigging.create_skeleton",
+        "rigging.create_ik_chain",
+        "rigging.skin_path",
+        "rigging.auto_skin",
+        "rigging.auto_breath",
+        "rigging.auto_walk",
+        "rigging.auto_jump"
+      ],
+      "categories": [
+        "rigging"
+      ]
+    },
+    "pinepaper_add_bone": {
+      "methodCount": 1,
+      "methods": [
+        "rigging.add_bone"
+      ],
+      "categories": [
+        "rigging"
+      ]
+    },
+    "pinepaper_attach_item_to_bone": {
+      "methodCount": 1,
+      "methods": [
+        "rigging.attach_item"
+      ],
+      "categories": [
+        "rigging"
+      ]
+    },
+    "pinepaper_apply_rig_preset": {
+      "methodCount": 1,
+      "methods": [
+        "rigging.apply_preset"
+      ],
+      "categories": [
+        "rigging"
+      ]
+    },
+    "pinepaper_save_pose": {
+      "methodCount": 1,
+      "methods": [
+        "rigging.save_pose"
+      ],
+      "categories": [
+        "rigging"
+      ]
+    },
+    "pinepaper_load_pose": {
+      "methodCount": 1,
+      "methods": [
+        "rigging.load_pose"
+      ],
+      "categories": [
+        "rigging"
+      ]
+    },
+    "pinepaper_interpolate_poses": {
+      "methodCount": 1,
+      "methods": [
+        "rigging.interpolate_poses"
+      ],
+      "categories": [
+        "rigging"
+      ]
+    },
+    "pinepaper_apply_blend_preset": {
+      "methodCount": 2,
+      "methods": [
+        "blending.apply_preset",
+        "blending.remove_preset"
+      ],
+      "categories": [
+        "blending"
+      ]
+    },
+    "pinepaper_transition_blend_mode": {
+      "methodCount": 1,
+      "methods": [
+        "blending.transition"
+      ],
+      "categories": [
+        "blending"
+      ]
+    },
+    "pinepaper_add_interactive_blend": {
+      "methodCount": 1,
+      "methods": [
+        "blending.add_interactive"
+      ],
+      "categories": [
+        "blending"
+      ]
+    },
+    "pinepaper_set_group_blend_mode": {
+      "methodCount": 1,
+      "methods": [
+        "blending.set_group_blend"
+      ],
+      "categories": [
+        "blending"
+      ]
+    },
+    "pinepaper_path_boolean": {
+      "methodCount": 5,
+      "methods": [
+        "pathops.unite",
+        "pathops.subtract",
+        "pathops.intersect",
+        "pathops.exclude",
+        "pathops.divide"
+      ],
+      "categories": [
+        "path_operations"
+      ]
+    },
+    "pinepaper_path_offset": {
+      "methodCount": 1,
+      "methods": [
+        "pathops.offset"
+      ],
+      "categories": [
+        "path_operations"
+      ]
+    },
+    "pinepaper_path_simplify": {
+      "methodCount": 1,
+      "methods": [
+        "pathops.simplify"
+      ],
+      "categories": [
+        "path_operations"
+      ]
+    },
+    "pinepaper_path_flatten": {
+      "methodCount": 1,
+      "methods": [
+        "pathops.flatten"
+      ],
+      "categories": [
+        "path_operations"
+      ]
+    },
+    "pinepaper_path_smooth": {
+      "methodCount": 1,
+      "methods": [
+        "pathops.smooth"
+      ],
+      "categories": [
+        "path_operations"
+      ]
+    },
+    "pinepaper_path_reverse": {
+      "methodCount": 1,
+      "methods": [
+        "pathops.reverse"
+      ],
+      "categories": [
+        "path_operations"
+      ]
+    },
+    "pinepaper_path_interpolate": {
+      "methodCount": 1,
+      "methods": [
+        "pathops.interpolate"
+      ],
+      "categories": [
+        "path_operations"
+      ]
+    },
+    "pinepaper_path_intersections": {
+      "methodCount": 1,
+      "methods": [
+        "pathops.get_intersections"
+      ],
+      "categories": [
+        "path_operations"
+      ]
+    },
+    "pinepaper_path_point_at": {
+      "methodCount": 1,
+      "methods": [
+        "pathops.get_point_at"
+      ],
+      "categories": [
+        "path_operations"
+      ]
+    },
+    "pinepaper_create_3d_object": {
+      "methodCount": 5,
+      "methods": [
+        "3d.cube",
+        "3d.sphere",
+        "3d.cylinder",
+        "3d.torus",
+        "3d.cone"
+      ],
+      "categories": [
+        "3d"
+      ]
+    },
+    "pinepaper_extrude_path": {
+      "methodCount": 2,
+      "methods": [
+        "3d.extrude",
+        "3d.revolve"
+      ],
+      "categories": [
+        "3d"
+      ]
+    },
+    "pinepaper_set_3d_projection": {
+      "methodCount": 3,
+      "methods": [
+        "3d.perspective",
+        "3d.isometric",
+        "3d.orthographic"
+      ],
+      "categories": [
+        "3d"
+      ]
+    },
+    "pinepaper_set_3d_camera": {
+      "methodCount": 1,
+      "methods": [
+        "3d.camera"
+      ],
+      "categories": [
+        "3d"
+      ]
+    },
+    "pinepaper_transform_3d": {
+      "methodCount": 1,
+      "methods": [
+        "3d.transform"
+      ],
+      "categories": [
+        "3d"
+      ]
+    },
+    "pinepaper_animate_3d": {
+      "methodCount": 1,
+      "methods": [
+        "3d.animate"
+      ],
+      "categories": [
+        "3d"
+      ]
+    },
+    "pinepaper_create_chart": {
+      "methodCount": 9,
+      "methods": [
+        "dataviz.bar_chart",
+        "dataviz.line_chart",
+        "dataviz.scatter_plot",
+        "dataviz.area_chart",
+        "dataviz.histogram",
+        "dataviz.pie_chart",
+        "dataviz.heatmap",
+        "dataviz.bubble_chart",
+        "dataviz.stacked_bar"
+      ],
+      "categories": [
+        "data_visualization"
+      ]
+    }
+  }
+}
