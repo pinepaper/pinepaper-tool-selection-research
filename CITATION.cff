@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this benchmark, please cite it as below."
+type: software
+title: "PinePaper-ToolBench: Benchmarking Tool Selection for MCP-Based Design Agents"
+authors:
+  - name: "Nova Elysium"
+    affiliation: "PinePaper Research"
+keywords:
+  - Tool Selection
+  - Model Context Protocol
+  - Knowledge Graphs
+  - Information Retrieval
+  - Artificial Intelligence
+  - MCP
+  - Benchmark
+date-released: "2026-04-01"
+year: 2026
+url: "https://github.com/pinepaper/pinepaper-tool-selection-research"
+license: MIT
