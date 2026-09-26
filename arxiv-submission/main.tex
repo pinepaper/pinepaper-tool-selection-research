@@ -451,7 +451,7 @@ requirements. Unlike Recall@$k$, this metric cannot be satisfied by ranking alon
 Configuration & Pass rate (of 200) & $\Delta$ vs.\ no retrieval (95\% CI) \\
 \midrule
 Full 112-tool schema & 106 (53.0\%) & --- \\
-BM25 router & 101 (50.5\%) & $-0.025$ $[-0.080, +0.030]$ \\
+BM25 router & 102 (51.0\%) & $-0.020$ $[-0.070, +0.025]$ \\
 BM25 top-$K$ ($K=10$) & 108 (54.0\%) & $+0.010$ $[-0.050, +0.070]$ \\
 KG-Hybrid & 104 (52.0\%) & $-0.010$ $[-0.075, +0.055]$ \\
 \bottomrule
@@ -459,8 +459,10 @@ KG-Hybrid & 104 (52.0\%) & $-0.010$ $[-0.075, +0.055]$ \\
 \end{center}
 
 \textbf{No configuration separates from dumping the full catalog, and KG-Hybrid does not separate
-from BM25} ($+0.015$, CI $[-0.040, +0.070]$). A method that wins on Recall@5 with $p=0.045$ is
-indistinguishable from no retrieval at all on the downstream task.
+from BM25} ($+0.010$, CI $[-0.050, +0.070]$). A method that wins on Recall@5 with $p=0.045$ is
+indistinguishable from no retrieval at all on the downstream task. Intervals are paired bootstrap over
+the 200 items, $B=20{,}000$, seed 20260907; all four configurations were scored in one run, against one
+version of the execution harness.
 
 We can name the mechanism rather than only report the null. The KG's contribution in
 Section~\ref{sec:results} comes from \texttt{implements} edges promoting tools that lexical matching

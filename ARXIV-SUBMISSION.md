@@ -33,11 +33,13 @@ stock `gemini-2.5-flash`, emitted tool calls **executed in the design engine** r
 | configuration | pass rate | Δ vs. no retrieval (95% CI) |
 |---|---|---|
 | full 112-tool schema | 106/200 (53.0%) | — |
-| BM25 router | 101/200 (50.5%) | −0.025 [−0.080, +0.030] |
+| BM25 router | 102/200 (51.0%) | −0.020 [−0.070, +0.025] |
 | BM25 top-K (K=10) | 108/200 (54.0%) | +0.010 [−0.050, +0.070] |
 | KG-Hybrid | 104/200 (52.0%) | −0.010 [−0.075, +0.055] |
 
-KG-Hybrid vs BM25 router: +0.015, CI [−0.040, +0.070] — not separated.
+KG-Hybrid vs BM25 router: +0.010, CI [−0.050, +0.070] — not separated. Intervals are paired bootstrap
+over the 200 items, B=20,000, **seed 20260907**; all four configurations scored in one run against one
+version of the harness.
 
 **Why include a result that qualifies our own headline.** Because we measured it, and because the
 paper's retrieval claims are untouched by it: Recall@5 = 0.868 at p = 0.045 remains exactly what it
@@ -54,8 +56,14 @@ distinct retrieval targets are arguments to one tool (generators are parameters 
 `execute_generator`). The structural signal is real; it has little left to add once the core set is
 present regardless.
 
-**Provenance of the added numbers.** Re-scored on the corrected adapter (2026-09-07), all four
-configurations on one ruler in `pinepaper-llm-v0/data/eval/scores-postfix-baselines/`. The
+**Provenance of the added numbers.** `pinepaper-llm-v0/data/eval/scores-L26fix/` — all four
+configurations, one run, one harness version. An earlier draft of this file and of the paper carried
+the BM25 router at **101 / −0.025**; that value came from a run in which one item (`t2-042`) failed a
+colour assertion because the scorer took the **top-left pixel as the background**, and that
+completion draws into the corner — its canvas is 99.8% the requested colour. The defect was fixed
+(consensus of the four corners) rather than the item hand-corrected, the four configurations were
+re-scored, and the router reads **102 / −0.020**. The fix moves exactly that one item and leaves the
+gallery reference set at 40 pass / 2 fail of 42. The
 previously circulated figures — "retrieval lifts 44% → 50%" and "KG-Hybrid 49 vs BM25 50" —
 were measured under a scorer defect that under-counted the no-retrieval baseline far more than the
 routers, and **must not be quoted**; they are what this revision replaces.

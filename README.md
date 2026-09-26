@@ -17,7 +17,7 @@ We introduce **PinePaper-ToolBench**, the first public benchmark for tool select
 - ⚠️ **Retrieval quality does NOT transfer to the end task.** In a companion generation study on the
   same MCP server (200 held-out prompts, stock `gemini-2.5-flash`, tool calls **executed in the design
   engine**), **no retrieval configuration separates from dumping the full 112-tool catalog** — BM25
-  router −0.025, BM25 K=10 +0.010, KG-Hybrid −0.010, every CI spanning zero. The defensible
+  router −0.020, BM25 K=10 +0.010, KG-Hybrid −0.010, every CI spanning zero. The defensible
   practitioner claim is about **cost, not quality**: retrieval buys a 94% token reduction at no
   measurable loss in output quality.
 
@@ -42,11 +42,11 @@ We introduce **PinePaper-ToolBench**, the first public benchmark for tool select
 | Configuration | Pass rate | Δ vs. no retrieval (95% CI) |
 |---|---|---|
 | Full 112-tool schema | 106/200 (53.0%) | — |
-| BM25 router | 101/200 (50.5%) | −0.025 [−0.080, +0.030] |
+| BM25 router | 102/200 (51.0%) | −0.020 [−0.070, +0.025] |
 | BM25 top-K (K=10) | 108/200 (54.0%) | +0.010 [−0.050, +0.070] |
 | KG-Hybrid | 104/200 (52.0%) | −0.010 [−0.075, +0.055] |
 
-None separates. KG-Hybrid vs BM25 router: +0.015 [−0.040, +0.070]. See paper §Discussion for the
+None separates. KG-Hybrid vs BM25 router: +0.010 [−0.050, +0.070]. See paper §Discussion for the
 mechanism — most `implements` edges point to core tools already present in every configuration.
 
 ### Per-Tier Recall@5
