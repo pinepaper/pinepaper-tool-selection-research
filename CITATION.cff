@@ -3,8 +3,8 @@ message: "If you use this benchmark, please cite it as below."
 type: software
 title: "PinePaper-ToolBench: Benchmarking Tool Selection for MCP-Based Design Agents"
 authors:
-  - name: "Nova Elysium"
-    affiliation: "PinePaper Research"
+  - name: "PinePaper Research"
+    email: "research@pinepaper.studio"
 keywords:
   - Tool Selection
   - Model Context Protocol

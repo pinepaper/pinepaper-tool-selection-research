@@ -75,8 +75,9 @@ I cannot post to arXiv — it needs your account and an interactive submission.
 1. Log in at <https://arxiv.org/submit>.
 2. **Primary category:** `cs.IR` (Information Retrieval). **Cross-list:** `cs.AI`, `cs.CL`.
 3. Upload `arxiv-submission.tar.gz`.
-4. Title, authors and abstract come from `main.tex` — check the author block is how you want to be
-   credited publicly; `CITATION.cff` currently reads "Nova Elysium / PinePaper Research".
+4. Title, authors and abstract come from `main.tex`. **Decided 2026-09-26:** credited publicly as
+   "PinePaper Research" everywhere (paper and `CITATION.cff`); the paper is posted as a PDF on
+   pinepaper.studio rather than arXiv, because arXiv shows the submitting account's name.
 5. **License:** the repo is MIT. Pick a CC license deliberately — arXiv's default (non-exclusive
    perpetual) is fine for a preprint; CC BY 4.0 if you want reuse. This choice is not reversible
    after announcement.
