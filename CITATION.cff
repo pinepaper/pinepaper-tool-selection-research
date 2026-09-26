@@ -17,3 +17,12 @@ date-released: "2026-09-07"
 year: 2026
 url: "https://github.com/pinepaper/pinepaper-tool-selection-research"
 license: MIT
+
+preferred-citation:
+  type: report
+  title: "PinePaper-ToolBench: Benchmarking Tool Selection for MCP-Based Design Agents"
+  authors:
+    - name: "PinePaper Research"
+  year: 2026
+  month: 9
+  url: "https://pinepaper.studio/research/pinepaper-toolbench.pdf"

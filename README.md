@@ -24,7 +24,7 @@ We introduce **PinePaper-ToolBench**, the first public benchmark for tool select
 **Links:**
 - Paper source: [`paper/main.tex`](paper/main.tex)
 - Compiled PDF: [`paper/main.pdf`](paper/main.pdf)
-- arXiv: *(pending)*
+- Published: [pinepaper.studio/research](https://pinepaper.studio/research/) · [PDF](https://pinepaper.studio/research/pinepaper-toolbench.pdf) (PinePaper Research, September 2026)
 
 ## Results (582 test cases)
 
