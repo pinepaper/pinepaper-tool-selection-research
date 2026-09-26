@@ -1,0 +1,16 @@
+\begin{table}[t]
+\centering
+\caption{Track B: Extended benchmark results (500+ tools, 1000+ cases). Best values in bold.}
+\label{tab:track-comparison}
+\begin{tabular}{lrrrrr}
+\toprule
+Method & R@1 & R@3 & R@5 & NDCG@5 & MRR \\
+\midrule
+Random & 0.002 & 0.007 & 0.011 & 0.007 & 0.011 \\
+Keyword Match & 0.356 & 0.483 & 0.542 & 0.479 & 0.541 \\
+BM25 & \textbf{0.382} & \textbf{0.551} & 0.603 & \textbf{0.540} & \textbf{0.595} \\
+TF-IDF + Cosine & 0.300 & 0.500 & 0.563 & 0.477 & 0.524 \\
+KG-Hybrid & 0.368 & 0.551 & \textbf{0.615} & 0.539 & 0.582 \\
+\bottomrule
+\end{tabular}
+\end{table}

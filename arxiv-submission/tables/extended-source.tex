@@ -1,0 +1,16 @@
+\begin{table}[t]
+\centering
+\caption{Track B: Recall@5 by test case source.}
+\label{tab:extended-source}
+\begin{tabular}{lrrr}
+\toprule
+Method & Original & Paraphrase & Synthetic \\
+\midrule
+Random & 0.009 & 0.010 & 0.014 \\
+Keyword Match & 0.728 & 0.787 & 0.288 \\
+BM25 & 0.766 & 0.789 & 0.387 \\
+TF-IDF + Cosine & 0.694 & 0.716 & \textbf{0.389} \\
+KG-Hybrid & \textbf{0.803} & \textbf{0.863} & 0.359 \\
+\bottomrule
+\end{tabular}
+\end{table}

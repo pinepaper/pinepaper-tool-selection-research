@@ -14,6 +14,12 @@ We introduce **PinePaper-ToolBench**, the first public benchmark for tool select
 - Gains concentrate on **compositional** (T4: +4.0) and **cross-domain** (T6: +3.0) queries
 - KG slightly **hurts** implicit single-tool queries (T2: -1.8) — structural signal adds noise when one tool suffices
 - All methods run in **sub-millisecond** time (BM25: <0.1ms, KG-Hybrid: 0.1ms)
+- ⚠️ **Retrieval quality does NOT transfer to the end task.** In a companion generation study on the
+  same MCP server (200 held-out prompts, stock `gemini-2.5-flash`, tool calls **executed in the design
+  engine**), **no retrieval configuration separates from dumping the full 112-tool catalog** — BM25
+  router −0.025, BM25 K=10 +0.010, KG-Hybrid −0.010, every CI spanning zero. The defensible
+  practitioner claim is about **cost, not quality**: retrieval buys a 94% token reduction at no
+  measurable loss in output quality.
 
 **Links:**
 - Paper source: [`paper/main.tex`](paper/main.tex)
@@ -30,6 +36,18 @@ We introduce **PinePaper-ToolBench**, the first public benchmark for tool select
 | BM25 | 0.567 | 0.775 | 0.854 | 0.757 | 0.783 | <0.1 ms |
 | KG-ToolRank | 0.452 | 0.642 | 0.702 | 0.617 | 0.646 | 0.5 ms |
 | **KG-Hybrid** | **0.568** | **0.806** | **0.868** | **0.769** | **0.788** | 0.2 ms |
+
+### End-task generation (200 prompts, executed in the engine, not ranked)
+
+| Configuration | Pass rate | Δ vs. no retrieval (95% CI) |
+|---|---|---|
+| Full 112-tool schema | 106/200 (53.0%) | — |
+| BM25 router | 101/200 (50.5%) | −0.025 [−0.080, +0.030] |
+| BM25 top-K (K=10) | 108/200 (54.0%) | +0.010 [−0.050, +0.070] |
+| KG-Hybrid | 104/200 (52.0%) | −0.010 [−0.075, +0.055] |
+
+None separates. KG-Hybrid vs BM25 router: +0.015 [−0.040, +0.070]. See paper §Discussion for the
+mechanism — most `implements` edges point to core tools already present in every configuration.
 
 ### Per-Tier Recall@5
 
